@@ -9,6 +9,7 @@ For more information on how this corpus was generated, see our upcoming paper.
 
 This was generated for use in the [Stucco project,](http://stucco.github.io/) but we hope this corpus will be useful to many others in the field.
 
+Note that MS Bulletins are named with their CVE number, specified in the vuln:CVE field.
 
 ****
 
