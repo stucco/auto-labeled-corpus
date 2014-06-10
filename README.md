@@ -13,6 +13,12 @@ Note that MS Bulletins are named with their CVE number, specified in the vuln:CV
 
 ****
 
+This corpus was generated and first used in the following paper, which provides many additional details.  If this work or this corpus is useful in your research, please include this citation.
+
+Bridges, Robert A., et al. "Automatic Labeling for Entity Extraction in Cyber Security.” accepted The Third ASE International Conference on  Cyber Security 2014. Preprint arXiv preprint arXiv:1308.4941 (2013).
+
+****
+
 
 # Entity Extraction Tests
 
