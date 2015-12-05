@@ -36,9 +36,11 @@ Each source will generate a *_corpus.json file, which corresponds to the files i
 
 # Generating (and Evaluating) Models from Corpus
 
-## Implementation using [Apache OpenNLP](https://opennlp.apache.org)
+The `learning` directory contains scripts to generate a model from the tagged corpus, and then evaluate this model.
 
-### Training
+This implementation is using [Apache OpenNLP](https://opennlp.apache.org)
+
+## Training
 Training is done for IOB-tagging, and then domain labeling, but the process is the same for both.
 
 #### Input
@@ -120,7 +122,7 @@ Here is a snippet of the code used to train the averaged perceptron:
 #### Output
 Two opennlp.perceptron.PerceptronModel objects are produced, namely, the IOB-tagging model and the domain labeling model.
 
-### Testing
+## Testing
 Testing is done for IOB-tagging, and then domain labeling, but the process is the same for both.
 
 #### Input
