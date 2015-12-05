@@ -3,12 +3,9 @@ auto-labeled-corpus
 
 This is a corpus of auto-labeled cyber security domain text.
 
-Specifically, this includes all descriptions from CVE/NVD entries starting in 2010.
-
-For more information on how this corpus was generated, see our upcoming paper.
-
 This was generated for use in the [Stucco project,](http://stucco.github.io/) but we hope this corpus will be useful to many others in the field.
 
+This includes all descriptions from CVE/NVD entries starting in 2010.  
 Note that MS Bulletins are named with their CVE number, specified in the vuln:CVE field.
 
 ****
@@ -20,7 +17,7 @@ Bridges, Robert A., et al. "Automatic Labeling for Entity Extraction in Cyber Se
 ****
 
 
-# Entity Extraction Tests
+# Generating (and Evaluating) Models from Corpus
 
 ## Implementation using [Apache OpenNLP](https://opennlp.apache.org)
 
