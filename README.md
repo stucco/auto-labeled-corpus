@@ -17,6 +17,23 @@ Bridges, Robert A., et al. "Automatic Labeling for Entity Extraction in Cyber Se
 ****
 
 
+
+# Generating Tagged Corpus
+
+The `tagging` directory contains scripts to generate and tag the initial corpus, using various heuristics.
+
+#### Input
+The *_preprocess.py files will fetch the source data and perform any needed pre-processing to generate the un-labeled corpus (in json format.)
+
+#### Process
+For each source, run the appropriate *_preprocess.py script, followed by the matching *_tagging.py script.
+
+#### Output
+Each source will generate a *_corpus.json file, which corresponds to the files in the `corpus` directory
+
+
+
+
 # Generating (and Evaluating) Models from Corpus
 
 ## Implementation using [Apache OpenNLP](https://opennlp.apache.org)
