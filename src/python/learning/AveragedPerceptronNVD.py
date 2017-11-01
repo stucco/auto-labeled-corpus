@@ -107,7 +107,7 @@ class AveragedPerceptronNVD(object):
 			for j in xrange(len(words)):
 				w=words[j]
 				t=nvd_tags[j]
-				pre_tagdict[w].union(set([t]))
+				pre_tagdict[w] = pre_tagdict[w].union(set([t])) # a bug? chenged the code according to the descriptions above
 		self.tagdict={x:list(y)[0] for x,y in pre_tagdict.items() if len(y)==1}
 
 		if verbose:
@@ -183,7 +183,7 @@ class AveragedPerceptronNVD(object):
 					# the above three lines do the updating for the true_tag label
 					self._totals[(f,guess)]+=(self.i - self._tstamps[(f,guess)])*self.weights[f][guess]
 					self.weights[f][guess]-=1
-					self._tstamps[(f,true_tag)]=self.i
+					self._tstamps[(f,guess)]=self.i # this line should be another bug ,too. this line should update the _tstamps of weight[f][guess].
 				
 	def average_weights(self):
 		"""after all iterations, we create the trained weights by averaging the totals"""
