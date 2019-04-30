@@ -1,0 +1,2593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrf:cvrfdoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cvrf-common="http://www.icasi.org/CVRF/schema/common/1.1" xmlns:prod="http://www.icasi.org/CVRF/schema/prod/1.1" xmlns:vuln="http://www.icasi.org/CVRF/schema/vuln/1.1" xmlns:cvrf="http://www.icasi.org/CVRF/schema/cvrf/1.1" xmlns:wbld="http://schemas.microsoft.com/office/word/2004/5/build" xmlns:scap-core="http://scap.nist.gov/schema/scap-core/1.0" xmlns:cvssv2="http://scap.nist.gov/schema/cvss-v2/1.0" xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2012-04-25T17:42:50" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+  <cvrf:DocumentTitle xml:lang="en">Cumulative Security Update for Internet Explorer</cvrf:DocumentTitle>
+  <cvrf:DocumentType xml:lang="en">Security Bulletin</cvrf:DocumentType>
+  <cvrf:DocumentPublisher Type="Vendor" VendorID="">
+    <cvrf:ContactDetails xml:lang="en">secure@microsoft.com and http://www.microsoft.com/msrc</cvrf:ContactDetails>
+    <cvrf:IssuingAuthority xml:lang="en">The Microsoft Security Response Center (MSRC) identifies, monitors, resolves, and responds to security incidents and Microsoft software security vulnerabilities. For more information, see http://www.microsoft.com/security/msrc.</cvrf:IssuingAuthority>
+  </cvrf:DocumentPublisher>
+  <cvrf:DocumentTracking>
+    <cvrf:Identification>
+      <cvrf:ID xml:lang="en">MS13-009</cvrf:ID>
+      <cvrf:Alias xml:lang="en">2792100</cvrf:Alias>
+    </cvrf:Identification>
+    <cvrf:Status>Final</cvrf:Status>
+    <cvrf:Version>1.0</cvrf:Version>
+    <cvrf:RevisionHistory>
+      <cvrf:Revision>
+        <cvrf:Number>1.0</cvrf:Number>
+        <cvrf:Date>2013-02-12T00:00:00-08:00</cvrf:Date>
+        <cvrf:Description xml:lang="en">Bulletin published.</cvrf:Description>
+      </cvrf:Revision>
+    </cvrf:RevisionHistory>
+    <cvrf:InitialReleaseDate>2013-02-12T00:00:00</cvrf:InitialReleaseDate>
+    <cvrf:CurrentReleaseDate>2013-02-12T00:00:00-08:00</cvrf:CurrentReleaseDate>
+  </cvrf:DocumentTracking>
+  <cvrf:DocumentNotes>
+    <cvrf:Note Title="Legal Disclaimer" Audience="Public" Type="Legal Disclaimer" Ordinal="1" xml:lang="en">The information provided in the Microsoft Knowledge Base is provided "as is" without warranty of any kind. Microsoft disclaims all warranties, either express or implied, including the warranties of merchantability and fitness for a particular purpose. In no event shall Microsoft Corporation or its suppliers be liable for any damages whatsoever including direct, indirect, incidental, consequential, loss of business profits or special damages, even if Microsoft Corporation or its suppliers have been advised of the possibility of such damages. Some states do not allow the exclusion or limitation of liability for consequential or incidental damages so the foregoing limitation may not apply.</cvrf:Note>
+    <cvrf:Note Title="Executive Summary" Audience="Public" Type="Summary" Ordinal="2" xml:lang="en">This security update resolves thirteen privately disclosed vulnerabilities in Internet Explorer. These vulnerability could allow remote code execution if a user views a specially crafted webpage using Internet Explorer. An attacker who successfully exploited this vulnerability could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.This security update is rated Critical for all supported versions of Internet Explorer. For more information, see the subsection, Affected and Non-Affected Software, in this section.The security update addresses the vulnerability by modifying the way that Internet Explorer handles objects in memory. For more information about the vulnerability, see the Frequently Asked Questions (FAQ) subsection for the specific vulnerability entry under the next section, Vulnerability Information.Recommendation. Most customers have automatic updating enabled and will not need to take any action because this security update will be downloaded and installed automatically. Customers who have not enabled automatic updating need to check for updates and install this update manually. For information about specific configuration options in automatic updating, see Microsoft Knowledge Base Article 294871.For administrators and enterprise installations, or end users who want to install this security update manually, Microsoft recommends that customers apply the update immediately using update management software, or by checking for updates using the Microsoft Update service. See also the section, Detection and Deployment Tools and Guidance, later in this bulletin. Known Issues. None</cvrf:Note>
+  </cvrf:DocumentNotes>
+  <cvrf:AggregateSeverity Namespace="" xml:lang="en">Critical</cvrf:AggregateSeverity>
+  <prod:ProductTree>
+    <prod:FullProductName ProductID="2385-3700">Microsoft Internet Explorer 6.0 on Microsoft Windows XP Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="2385-3126">Microsoft Internet Explorer 6.0 on Microsoft Windows XP Professional x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="2385-4898">Microsoft Internet Explorer 6.0 on Microsoft Windows Server 2003 Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="2385-5867">Microsoft Internet Explorer 6.0 on Microsoft Windows Server 2003 x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="2385-6236">Microsoft Internet Explorer 6.0 on Microsoft Windows Server 2003 for Itanium-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1282-3700">Windows Internet Explorer 7 on Microsoft Windows XP Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="1282-3126">Windows Internet Explorer 7 on Microsoft Windows XP Professional x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1282-4898">Windows Internet Explorer 7 on Microsoft Windows Server 2003 Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1282-5867">Windows Internet Explorer 7 on Microsoft Windows Server 2003 x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1282-6236">Windows Internet Explorer 7 on Microsoft Windows Server 2003 for Itanium-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1282-4393">Windows Internet Explorer 7 on Windows Vista Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1282-9316">Windows Internet Explorer 7 on Windows Vista x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1282-9312">Windows Internet Explorer 7 on Windows Server 2008 for 32-bit Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1282-9318">Windows Internet Explorer 7 on Windows Server 2008 for x64-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1282-9311">Windows Internet Explorer 7 on Windows Server 2008 for Itanium-Based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-3700">Windows Internet Explorer 8 on Microsoft Windows XP Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-3126">Windows Internet Explorer 8 on Microsoft Windows XP Professional x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-4898">Windows Internet Explorer 8 on Microsoft Windows Server 2003 Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-5867">Windows Internet Explorer 8 on Microsoft Windows Server 2003 x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-4393">Windows Internet Explorer 8 on Windows Vista Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-9316">Windows Internet Explorer 8 on Windows Vista x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-9312">Windows Internet Explorer 8 on Windows Server 2008 for 32-bit Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-9318">Windows Internet Explorer 8 on Windows Server 2008 for x64-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-9303">Windows Internet Explorer 8 on Windows 7 for 32-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-10047">Windows Internet Explorer 8 on Windows 7 for 32-bit Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-9345">Windows Internet Explorer 8 on Windows 7 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-10048">Windows Internet Explorer 8 on Windows 7 for x64-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-9351">Windows Internet Explorer 8 on Windows Server 2008 R2 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-10051">Windows Internet Explorer 8 on Windows Server 2008 R2 for x64-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-6257">Windows Internet Explorer 8 on Windows Server 2008 R2 for Itanium-Based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="1233-10050">Windows Internet Explorer 8 on Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="10054-4393">Windows Internet Explorer 9 on Windows Vista Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="10054-9316">Windows Internet Explorer 9 on Windows Vista x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="10054-9312">Windows Internet Explorer 9 on Windows Server 2008 for 32-bit Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="10054-9318">Windows Internet Explorer 9 on Windows Server 2008 for x64-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="10054-9303">Windows Internet Explorer 9 on Windows 7 for 32-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10054-10047">Windows Internet Explorer 9 on Windows 7 for 32-bit Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="10054-9345">Windows Internet Explorer 9 on Windows 7 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10054-10048">Windows Internet Explorer 9 on Windows 7 for x64-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="10054-9351">Windows Internet Explorer 9 on Windows Server 2008 R2 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10054-10051">Windows Internet Explorer 9 on Windows Server 2008 R2 for x64-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="10401-10373">Windows Internet Explorer 10 on Windows 8 for 32-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10401-10374">Windows Internet Explorer 10 on Windows 8 for 64-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10401-10378">Windows Internet Explorer 10 on Windows Server 2012</prod:FullProductName>
+    <prod:FullProductName ProductID="10401-10377">Windows Internet Explorer 10 on Windows RT</prod:FullProductName>
+  </prod:ProductTree>
+  <vuln:Vulnerability Ordinal="1">
+    <vuln:Title xml:lang="en">Shift JIS Character Encoding Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">An information disclosure vulnerability exists in Internet Explorer that could allow an attacker to gain access to information in another domain or Internet Explorer zone. An attacker could exploit the vulnerability by constructing a specially crafted webpage that could allow information disclosure if a user viewed the webpage. An attacker who successfully exploited this vulnerability could view content from another domain or Internet Explorer zone.</vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0015</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could view content from another domain or Internet Explorer zone.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit this vulnerability through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to visit these websites. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that this vulnerability had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from this vulnerability.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Masato Kinugawa</vuln:Name>
+        <vuln:Description xml:lang="en"> for reporting the Shift JIS Character Encoding Vulnerability (CVE-2013-0015)</vuln:Description>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="2">
+    <vuln:Title xml:lang="en">Internet Explorer SetCapture Remote Code Execution</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">Remote code execution vulnerabilities exist in the way that Internet Explorer accesses an object in memory that has been deleted. These vulnerabilities may corrupt memory in such a way that an attacker could execute arbitrary code in the context of the current user. </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0018</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. If the current user is logged on with administrative user rights, an attacker who successfully exploited these vulnerabilities could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">SkyLined</vuln:Name>
+        <vuln:Description xml:lang="en">working with HP's Zero Day Initiative, for reporting the Internet Explorer COmWindowProxy Use After Free Vulnerability (CVE-2013-0019) </vuln:Description>
+        <vuln:URL>http://www.hpenterprisesecurity.com/products</vuln:URL>
+        <vuln:URL>http://www.zerodayinitiative.com/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="3">
+    <vuln:Title xml:lang="en">Internet Explorer COmWindowProxy Remote Code Execution</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">Remote code execution vulnerabilities exist in the way that Internet Explorer accesses an object in memory that has been deleted. These vulnerabilities may corrupt memory in such a way that an attacker could execute arbitrary code in the context of the current user. </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0019</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. If the current user is logged on with administrative user rights, an attacker who successfully exploited these vulnerabilities could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Omair</vuln:Name>
+        <vuln:Description xml:lang="en">for reporting the Internet Explorer SetCapture Use After Free Vulnerability (CVE-2013-0018)</vuln:Description>
+        <vuln:URL>http://krash.in/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="4">
+    <vuln:Title xml:lang="en">Internet Explorer CMarkup Remote Code Execution Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">Remote code execution vulnerabilities exist in the way that Internet Explorer accesses an object in memory that has been deleted. These vulnerabilities may corrupt memory in such a way that an attacker could execute arbitrary code in the context of the current user. </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0020</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. If the current user is logged on with administrative user rights, an attacker who successfully exploited these vulnerabilities could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Arthur Gerkis</vuln:Name>
+        <vuln:Description xml:lang="en"> working with the Exodus Intelligence, for reporting the Internet Explorer CMarkup Use After Free Vulnerability (CVE-2013-0020)</vuln:Description>
+        <vuln:URL></vuln:URL>
+      </vuln:Acknowledgment>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Stephen Fewer </vuln:Name>
+        <vuln:Organization xml:lang="en"> Harmony Security</vuln:Organization>
+        <vuln:Description xml:lang="en">for reporting the Internet Explorer CMarkup Use After Free Vulnerability (CVE-2013-0020)</vuln:Description>
+        <vuln:URL>http://www.harmonysecurity.com/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="5">
+    <vuln:Title xml:lang="en">Internet Explorer vtable Remote Code Execution Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">Remote code execution vulnerabilities exist in the way that Internet Explorer accesses an object in memory that has been deleted. These vulnerabilities may corrupt memory in such a way that an attacker could execute arbitrary code in the context of the current user. </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0021</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. If the current user is logged on with administrative user rights, an attacker who successfully exploited these vulnerabilities could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Tencent PC Manager </vuln:Name>
+        <vuln:Description xml:lang="en">for reporting the Internet Explorer vtable Use After Free Vulnerability (CVE-2013-0021)</vuln:Description>
+        <vuln:URL></vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="6">
+    <vuln:Title xml:lang="en">Internet Explorer LsGetTrailInfo Remote Code Execution Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">Remote code execution vulnerabilities exist in the way that Internet Explorer accesses an object in memory that has been deleted. These vulnerabilities may corrupt memory in such a way that an attacker could execute arbitrary code in the context of the current user. </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0022</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. If the current user is logged on with administrative user rights, an attacker who successfully exploited these vulnerabilities could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Omair</vuln:Name>
+        <vuln:Description xml:lang="en">for reporting the Internet Explorer LsGetTrailInfo Use After Free Vulnerability (CVE-2013-0022)</vuln:Description>
+        <vuln:URL>http://krash.in/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="7">
+    <vuln:Title xml:lang="en">Internet Explorer CDispNode Remote Code Execution Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">Remote code execution vulnerabilities exist in the way that Internet Explorer accesses an object in memory that has been deleted. These vulnerabilities may corrupt memory in such a way that an attacker could execute arbitrary code in the context of the current user. </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0023</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. If the current user is logged on with administrative user rights, an attacker who successfully exploited these vulnerabilities could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Arthur Gerkis,</vuln:Name>
+        <vuln:Description xml:lang="en">working with HP's Zero Day Initiative, for reporting the Internet Explorer CDispNode Use After Free Vulnerability (CVE-2013-0023)</vuln:Description>
+        <vuln:URL>http://www.hpenterprisesecurity.com/products</vuln:URL>
+        <vuln:URL>http://www.zerodayinitiative.com/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="8">
+    <vuln:Title xml:lang="en">Internet Explorer pasteHTML Remote Code Execution Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">Remote code execution vulnerabilities exist in the way that Internet Explorer accesses an object in memory that has been deleted. These vulnerabilities may corrupt memory in such a way that an attacker could execute arbitrary code in the context of the current user. </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0024</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. If the current user is logged on with administrative user rights, an attacker who successfully exploited these vulnerabilities could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">An anonymous researcher</vuln:Name>
+        <vuln:Description xml:lang="en"> working with HP's Zero Day Initiative, for reporting the Internet Explorer pasteHTML Use After Free Vulnerability (CVE-2013-0024)</vuln:Description>
+        <vuln:URL>http://www.hpenterprisesecurity.com/products</vuln:URL>
+        <vuln:URL>http://www.zerodayinitiative.com/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="9">
+    <vuln:Title xml:lang="en">Internet Explorer SLayoutRun Remote Code Execution Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">Remote code execution vulnerabilities exist in the way that Internet Explorer accesses an object in memory that has been deleted. These vulnerabilities may corrupt memory in such a way that an attacker could execute arbitrary code in the context of the current user. </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0025</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. If the current user is logged on with administrative user rights, an attacker who successfully exploited these vulnerabilities could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Scott Bell </vuln:Name>
+        <vuln:Organization xml:lang="en"> Security-Assessment.com </vuln:Organization>
+        <vuln:Description xml:lang="en">for reporting the Internet Explorer SLayoutRun Use After Free Vulnerability (CVE-2013-0025)</vuln:Description>
+        <vuln:URL>http://www.security-assessment.com/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="10">
+    <vuln:Title xml:lang="en">Internet Explorer InsertElement Remote Code Execution Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">Remote code execution vulnerabilities exist in the way that Internet Explorer accesses an object in memory that has been deleted. These vulnerabilities may corrupt memory in such a way that an attacker could execute arbitrary code in the context of the current user. </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0026</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. If the current user is logged on with administrative user rights, an attacker who successfully exploited these vulnerabilities could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Jose A Vazquez </vuln:Name>
+        <vuln:Organization xml:lang="en">Yenteasy Security Research</vuln:Organization>
+        <vuln:Description xml:lang="en"> working with the Exodus Intelligence, for reporting the Internet Explorer InsertElement Use After Free Vulnerability (CVE-2013-0026)</vuln:Description>
+        <vuln:URL></vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="11">
+    <vuln:Title xml:lang="en">Internet Explorer CPasteCommand Remote Code Execution Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">Remote code execution vulnerabilities exist in the way that Internet Explorer accesses an object in memory that has been deleted. These vulnerabilities may corrupt memory in such a way that an attacker could execute arbitrary code in the context of the current user. </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0027</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. If the current user is logged on with administrative user rights, an attacker who successfully exploited these vulnerabilities could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Mark Yason </vuln:Name>
+        <vuln:Organization xml:lang="en">IBM X-Force </vuln:Organization>
+        <vuln:Description xml:lang="en">for reporting the Internet Explorer queryCommand Use After Free Vulnerability (CVE-2013-0027)</vuln:Description>
+        <vuln:URL></vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="12">
+    <vuln:Title xml:lang="en">Internet Explorer CObjectElement Use After Free Vulnerability </vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">Remote code execution vulnerabilities exist in the way that Internet Explorer accesses an object in memory that has been deleted. These vulnerabilities may corrupt memory in such a way that an attacker could execute arbitrary code in the context of the current user. </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0028</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. If the current user is logged on with administrative user rights, an attacker who successfully exploited these vulnerabilities could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Scott Bell </vuln:Name>
+        <vuln:Organization xml:lang="en">Security-Assessment.com</vuln:Organization>
+        <vuln:Description xml:lang="en">for reporting the Internet Explorer CObjectElement Use After Free Vulnerability (CVE-2013-0028)</vuln:Description>
+        <vuln:URL>http://www.security-assessment.com/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="13">
+    <vuln:Title xml:lang="en">Internet ExplorerCHTMLEditor Remote Code Execution Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">Remote code execution vulnerabilities exist in the way that Internet Explorer accesses an object in memory that has been deleted. These vulnerabilities may corrupt memory in such a way that an attacker could execute arbitrary code in the context of the current user. </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0029</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2385-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1282-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1233-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10054-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10401-10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. If the current user is logged on with administrative user rights, an attacker who successfully exploited these vulnerabilities could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Internet Explorer is used frequently, such as workstations or terminal servers, are at the most risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit these vulnerabilities through Internet Explorer and then convince a user to view the website. The attacker could also take advantage of compromised websites and websites that accept or host user-provided content or advertisements. These websites could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by getting them to open an attachment sent through email.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone. The Restricted sites zone, which disables script and ActiveX controls, helps reduce the risk of an attacker being able to use these vulnerabilities to execute malicious code. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, Internet Explorer on Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, and Windows Server 2012 runs in a restricted mode that is known as Enhanced Security Configuration. This mode mitigates these vulnerabilities. See the FAQ section for this vulnerability for more information about Internet Explorer Enhanced Security Configuration.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Internet and Local intranet security zone settings to "High" to block ActiveX Controls and Active Scripting in these zones</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Configure Internet Explorer to prompt before running Active Scripting or to disable Active Scripting in the Internet and Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-009</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-009</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Stephen Fewer</vuln:Name>
+        <vuln:Organization xml:lang="en">Harmony Security</vuln:Organization>
+        <vuln:Description xml:lang="en"> working with HP's Zero Day Initiative, for reporting the Internet Explorer CHTML Use After Free Vulnerability (CVE-2013-0029)</vuln:Description>
+        <vuln:URL>http://www.harmonysecurity.com/</vuln:URL>
+        <vuln:URL>http://www.hpenterprisesecurity.com/products</vuln:URL>
+        <vuln:URL>http://www.zerodayinitiative.com/</vuln:URL>
+      </vuln:Acknowledgment>
+      <vuln:Acknowledgment>
+        <vuln:Organization xml:lang="en">Aniway.Aniway@gmail.com</vuln:Organization>
+        <vuln:Description xml:lang="en">working with HP's Zero Day Initiative, for reporting the Internet Explorer CHTML Use After Free Vulnerability (CVE-2013-0029)</vuln:Description>
+        <vuln:URL>mailto:Aniway.Aniway@gmail.com</vuln:URL>
+      </vuln:Acknowledgment>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Ollie Whitehouse </vuln:Name>
+        <vuln:Organization xml:lang="en"> NCC Group </vuln:Organization>
+        <vuln:Description xml:lang="en">for working with us on additional defense-in-depth changes included in this bulletin</vuln:Description>
+        <vuln:URL></vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+</cvrf:cvrfdoc>

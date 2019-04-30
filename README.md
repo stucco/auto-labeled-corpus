@@ -23,7 +23,7 @@ Bridges, Robert A., et al. "Automatic Labeling for Entity Extraction in Cyber Se
 The `src/python/tagging` directory contains scripts to generate and tag the initial corpus, using various heuristics.
 
 #### Input
-The *_preprocess.py files will fetch the source data and perform any needed pre-processing to generate the un-labeled corpus (in json format.)
+The *_preprocess.py files (in the /src/python/preprocessing/ subdirectories) will fetch the source data and perform any needed pre-processing to generate the un-labeled corpus (in json format.)  These scripts are old and in need of maintenance and documentation.
 
 #### Process
 For each source, run the appropriate *_preprocess.py script, followed by the matching *_tagging.py script.
@@ -95,13 +95,13 @@ Below is a few of the corresponding domain-labeling events:
 
 Here is a snippet of the code used to train the averaged perceptron:
 
-	/** 
+	/**
 	 * Open an event stream file, where the format of the file is one event per line
 	 * And, an event consists of a target label followed by space-delimited context values (i.e. features)
 	 */
 	EventStream events = new FileEventStream(new File(eventFileName));
 
-	/** 
+	/**
 	 * TwoPassDataIndexer(EventStream eventStream, int cutoff, boolean sort)
 	 *		eventStream - sequence of events to train with
 	 *		cutoff - minimum number of times a context value must be seen to be included in the model

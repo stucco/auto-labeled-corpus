@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrf:cvrfdoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cvrf-common="http://www.icasi.org/CVRF/schema/common/1.1" xmlns:prod="http://www.icasi.org/CVRF/schema/prod/1.1" xmlns:vuln="http://www.icasi.org/CVRF/schema/vuln/1.1" xmlns:cvrf="http://www.icasi.org/CVRF/schema/cvrf/1.1" xmlns:wbld="http://schemas.microsoft.com/office/word/2004/5/build" xmlns:scap-core="http://scap.nist.gov/schema/scap-core/1.0" xmlns:cvssv2="http://scap.nist.gov/schema/cvss-v2/1.0" xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2012-04-25T17:42:50" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+  <cvrf:DocumentTitle xml:lang="en">Vulnerabilities in Microsoft Excel Could Allow Remote Code Execution</cvrf:DocumentTitle>
+  <cvrf:DocumentType xml:lang="en">Security Bulletin</cvrf:DocumentType>
+  <cvrf:DocumentPublisher Type="Vendor" VendorID="">
+    <cvrf:ContactDetails xml:lang="en">secure@microsoft.com and http://www.microsoft.com/msrc</cvrf:ContactDetails>
+    <cvrf:IssuingAuthority xml:lang="en">The Microsoft Security Response Center (MSRC) identifies, monitors, resolves, and responds to security incidents and Microsoft software security vulnerabilities. For more information, see http://www.microsoft.com/security/msrc.</cvrf:IssuingAuthority>
+  </cvrf:DocumentPublisher>
+  <cvrf:DocumentTracking>
+    <cvrf:Identification>
+      <cvrf:ID xml:lang="en">MS12-076</cvrf:ID>
+      <cvrf:Alias xml:lang="en">2720184</cvrf:Alias>
+    </cvrf:Identification>
+    <cvrf:Status>Final</cvrf:Status>
+    <cvrf:Version>1.0</cvrf:Version>
+    <cvrf:RevisionHistory>
+      <cvrf:Revision>
+        <cvrf:Number>1.0</cvrf:Number>
+        <cvrf:Date>2012-11-13T00:00:00-08:00</cvrf:Date>
+        <cvrf:Description xml:lang="en">V1.0 (November 13, 2012): Bulletin published.</cvrf:Description>
+      </cvrf:Revision>
+    </cvrf:RevisionHistory>
+    <cvrf:InitialReleaseDate>2012-11-13T00:00:00</cvrf:InitialReleaseDate>
+    <cvrf:CurrentReleaseDate>2012-11-13T00:00:00-08:00</cvrf:CurrentReleaseDate>
+  </cvrf:DocumentTracking>
+  <cvrf:DocumentNotes>
+    <cvrf:Note Title="Legal Disclaimer" Audience="Public" Type="Legal Disclaimer" Ordinal="1" xml:lang="en">The information provided in the Microsoft Knowledge Base is provided "as is" without warranty of any kind. Microsoft disclaims all warranties, either express or implied, including the warranties of merchantability and fitness for a particular purpose. In no event shall Microsoft Corporation or its suppliers be liable for any damages whatsoever including direct, indirect, incidental, consequential, loss of business profits or special damages, even if Microsoft Corporation or its suppliers have been advised of the possibility of such damages. Some states do not allow the exclusion or limitation of liability for consequential or incidental damages so the foregoing limitation may not apply.</cvrf:Note>
+    <cvrf:Note Title="Executive Summary" Audience="Public" Type="Summary" Ordinal="2" xml:lang="en">This security update resolves four privately reported vulnerabilities in Microsoft Office. An attacker who successfully exploited these vulnerabilities could gain the same user rights as the logged-on user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.This security update is rated Important for all supported editions of Microsoft Excel 2003, Microsoft Excel 2007, Microsoft Office 2007, Microsoft Excel 2010, Microsoft Office 2010, Microsoft Office 2008 for Mac, and Microsoft Office for Mac 2011; it is also rated Important for supported versions of Microsoft Excel Viewer and Microsoft Office Compatibility Pack. For more information, see the subsection, Affected and Non-Affected Software, in this section.The security update addresses the vulnerabilities by correcting the way that Microsoft Excel validates data when opening specially crafted Excel files. For more information about the vulnerabilities, see the Frequently Asked Questions (FAQ) subsection for the specific vulnerability entry under the next section, Vulnerability Information.Recommendation. Customers can configure automatic updating to check online for updates from Microsoft Update by using the Microsoft Update service. Customers who have automatic updating enabled and configured to check online for updates from Microsoft Update typically will not need to take any action because this security update will be downloaded and installed automatically. Customers who have not enabled automatic updating need to check for updates from Microsoft Update and install this update manually. For information about specific configuration options in automatic updating in supported editions of Windows XP and Windows Server 2003, see Microsoft Knowledge Base Article 294871. For information about automatic updating in supported editions of Windows Vista, Windows Server 2008, Windows 7, and Windows Server 2008 R2, see Understanding Windows automatic updating.For administrators and enterprise installations, or end users who want to install this security update manually, Microsoft recommends that customers apply the update at the earliest opportunity using update management software, or by checking for updates using the Microsoft Update service.See also the section, Detection and Deployment Tools and Guidance, later in this bulletin.Known Issues. None</cvrf:Note>
+  </cvrf:DocumentNotes>
+  <cvrf:AggregateSeverity Namespace="" xml:lang="en">Important</cvrf:AggregateSeverity>
+  <cvrf:Acknowledgments>
+    <cvrf:Acknowledgment>
+      <cvrf:Name xml:lang="en">Sean Larsson</cvrf:Name>
+      <cvrf:Organization xml:lang="en">iDefense VCP</cvrf:Organization>
+      <cvrf:Description xml:lang="en">for reporting the Excel SerAuxErrBar Heap Overflow Vulnerability (CVE-2012-1885)</cvrf:Description>
+      <cvrf:URL>http://labs.idefense.com/</cvrf:URL>
+    </cvrf:Acknowledgment>
+    <cvrf:Acknowledgment>
+      <cvrf:Name xml:lang="en">Anonymous researcher</cvrf:Name>
+      <cvrf:Organization xml:lang="en">iDefense VCP</cvrf:Organization>
+      <cvrf:Description xml:lang="en">for reporting the Excel Memory Corruption Vulnerability (CVE-2012-1886)</cvrf:Description>
+      <cvrf:URL>http://labs.idefense.com/</cvrf:URL>
+    </cvrf:Acknowledgment>
+    <cvrf:Acknowledgment>
+      <cvrf:Name xml:lang="en">Anonymous researcher</cvrf:Name>
+      <cvrf:Organization xml:lang="en">iDefense VCP</cvrf:Organization>
+      <cvrf:Description xml:lang="en"> for reporting the Excel SST Invalid Length Use After Free Vulnerability (CVE-2012-1887)</cvrf:Description>
+      <cvrf:URL>http://labs.idefense.com/</cvrf:URL>
+    </cvrf:Acknowledgment>
+    <cvrf:Acknowledgment>
+      <cvrf:Name xml:lang="en">Anonymous researcher</cvrf:Name>
+      <cvrf:Organization xml:lang="en">HP TippingPoint's Zero Day Initiative</cvrf:Organization>
+      <cvrf:Description xml:lang="en">for reporting the Stack Overflow from FEAT record Vulnerability (CVE-2012-2543)</cvrf:Description>
+      <cvrf:URL>http://www.hpenterprisesecurity.com/products/hp-tippingpoint-network-security/</cvrf:URL>
+      <cvrf:URL>http://www.zerodayinitiative.com/</cvrf:URL>
+    </cvrf:Acknowledgment>
+  </cvrf:Acknowledgments>
+  <prod:ProductTree>
+    <prod:FullProductName ProductID="9262">Microsoft Excel 2003 Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="9309">Microsoft Excel 2007 Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="10152">Microsoft Excel 2007 Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="10182">Microsoft Excel 2010 Service Pack 1 (32-bit editions)</prod:FullProductName>
+    <prod:FullProductName ProductID="10181">Microsoft Excel 2010 Service Pack 1 (64-bit editions)</prod:FullProductName>
+    <prod:FullProductName ProductID="6918">Microsoft Office 2008 for Mac</prod:FullProductName>
+    <prod:FullProductName ProductID="10024">Microsoft Office for Mac 2011</prod:FullProductName>
+    <prod:FullProductName ProductID="196">Microsoft Excel Viewer 2007 Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="9307">Microsoft Office Compatibility Pack Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="4497">Microsoft Office Compatibility Pack Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="10236">Microsoft Excel Web App 2010 Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="10313">Microsoft Excel 2013 (32-bit editions)</prod:FullProductName>
+    <prod:FullProductName ProductID="10314">Microsoft Excel 2013 (64-bit editions)</prod:FullProductName>
+    <prod:FullProductName ProductID="10405">Microsoft Excel 2013 RT</prod:FullProductName>
+    <prod:FullProductName ProductID="10408">Microsoft Excel Web App 2013</prod:FullProductName>
+    <prod:FullProductName ProductID="9171-9407">Excel Services on Microsoft SharePoint Server 2007 Service Pack 2 (32-bit editions)</prod:FullProductName>
+    <prod:FullProductName ProductID="9171-9408">Excel Services on Microsoft SharePoint Server 2007 Service Pack 2 (64-bit editions)</prod:FullProductName>
+    <prod:FullProductName ProductID="9171-10308">Excel Services on Microsoft SharePoint Server 2007 Service Pack 3 (32-bit editions)</prod:FullProductName>
+    <prod:FullProductName ProductID="9171-10307">Excel Services on Microsoft SharePoint Server 2007 Service Pack 3 (64-bit editions)</prod:FullProductName>
+    <prod:FullProductName ProductID="9171-10120">Excel Services on Microsoft SharePoint Server 2010 Service Pack 1</prod:FullProductName>
+  </prod:ProductTree>
+  <vuln:Vulnerability Ordinal="1">
+    <vuln:Title xml:lang="en">Excel SerAuxErrBar Heap Overflow Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">A remote code execution vulnerability exists in the way that Microsoft Excel handles specially crafted Excel files. An attacker who successfully exploited this vulnerability could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2012-1885</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9262</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9309</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10152</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10182</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10181</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>6918</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10024</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>196</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9307</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4497</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10313</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10314</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10405</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10408</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-9407</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-9408</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-10308</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-10307</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-10120</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could run arbitrary code as the current user. If the current user is logged on with administrative user rights, an attacker could take complete control of the affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">
+          This vulnerability requires that a user open a specially crafted Excel file with an affected version of Microsoft Excel.
+          In an email attack scenario, an attacker could exploit the vulnerability by sending a specially crafted Excel file to the user and by convincing the user to open the file.
+          In a web-based attack scenario, an attacker would have to host a website that contains a specially crafted Excel file that is used to attempt to exploit this vulnerability. In addition, compromised websites and websites that accept or host user-provided content could contain specially crafted content that could exploit this vulnerability. An attacker would have no way to force users to visit a specially crafted website. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link that takes them to the attacker's site, and then convince them to open the specially crafted Excel file.
+        </vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that this vulnerability had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Microsoft Excel is used, including workstations and terminal servers, are primarily at risk. Servers could be at more risk if administrators allow users to log on to servers and to run programs. However, best practices strongly discourage allowing this.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a website that contains an Excel file that is used to exploit this vulnerability. In addition, compromised websites and websites that accept or host user-provided content or advertisements could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to visit these websites. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link in an email message or Instant Messenger message that takes them to the attacker's website, and then convince them to open the specially crafted Excel file.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">The vulnerability cannot be exploited automatically through email. For an attack to be successful a user must open an attachment that is sent in an email message.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Use Microsoft Office File Block policy to block the opening of Office 2003 and earlier documents from unknown or untrusted sources and locations</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Use the Microsoft Office Isolated Conversion Environment (MOICE) when opening files from unknown or untrusted sources</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Do not open Excel files that you receive from untrusted sources or that you receive unexpectedly from trusted sources</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS12-076</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS12-076</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Sean Larsson</vuln:Name>
+        <vuln:Organization xml:lang="en"> iDefense VCP</vuln:Organization>
+        <vuln:Description xml:lang="en">for reporting the Excel SerAuxErrBar Heap Overflow Vulnerability (CVE-2012-1885)</vuln:Description>
+        <vuln:URL>http://labs.idefense.com/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="2">
+    <vuln:Title xml:lang="en">Excel Memory Corruption Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="2" xml:lang="en">A remote code execution vulnerability exists in the way that Microsoft Excel handles specially crafted Excel files. An attacker who successfully exploited this vulnerability could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2012-1886</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9262</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9309</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10152</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10182</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10181</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>6918</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10024</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>196</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9307</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4497</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10313</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10314</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10405</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10408</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-9407</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-9408</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-10308</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-10307</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-10120</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could run arbitrary code as the current user. If the current user is logged on with administrative user rights, an attacker could take complete control of the affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">
+          This vulnerability requires that a user open a specially crafted Excel file with an affected version of Microsoft Excel.
+          In an email attack scenario, an attacker could exploit the vulnerability by sending a specially crafted Excel file to the user and by convincing the user to open the file.
+          In a web-based attack scenario, an attacker would have to host a website that contains a specially crafted Excel file that is used to attempt to exploit this vulnerability. In addition, compromised websites and websites that accept or host user-provided content could contain specially crafted content that could exploit this vulnerability. An attacker would have no way to force users to visit a specially crafted website. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link that takes them to the attacker's site, and then convince them to open the specially crafted Excel file.
+        </vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that this vulnerability had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Microsoft Excel is used, including workstations and terminal servers, are primarily at risk. Servers could be at more risk if administrators allow users to log on to servers and to run programs. However, best practices strongly discourage allowing this.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a website that contains an Excel file that is used to exploit this vulnerability. In addition, compromised websites and websites that accept or host user-provided content or advertisements could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to visit these websites. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link in an email message or Instant Messenger message that takes them to the attacker's website, and then convince them to open the specially crafted Excel file.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">The vulnerability cannot be exploited automatically through email. For an attack to be successful a user must open an attachment that is sent in an email message.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">The vulnerability cannot be exploited automatically through email. For an attack to be successful a user must open an attachment that is sent in an email message.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Office File Validation to disable the opening of files that fail validation in Excel 2003 and Excel 2007</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Office File Validation to disable the edit in Protected View of files that fail validation in Excel 2010</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Use Microsoft Office File Block policy to block the opening of Office 2003 and earlier documents from unknown or untrusted sources and locations</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Use the Microsoft Office Isolated Conversion Environment (MOICE) when opening files from unknown or untrusted sources</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Do not open Excel files that you receive from untrusted sources or that you receive unexpectedly from trusted sources</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS12-076</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS12-076</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Anonymous researcher</vuln:Name>
+        <vuln:Organization xml:lang="en"> iDefense VCP</vuln:Organization>
+        <vuln:Description xml:lang="en">for reporting the Excel SerAuxErrBar Heap Overflow Vulnerability (CVE-2012-1885)</vuln:Description>
+        <vuln:URL>http://labs.idefense.com/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="3">
+    <vuln:Title xml:lang="en">Excel SST Invalid Length Use After Free Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="3" xml:lang="en">A remote code execution vulnerability exists in the way that Microsoft Excel handles specially crafted Excel files. An attacker who successfully exploited this vulnerability could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2012-1887</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9262</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9309</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10152</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10182</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10181</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>6918</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10024</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>196</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9307</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>4497</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10313</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10314</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10405</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10408</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-9407</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-9408</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-10308</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-10307</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-10120</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could run arbitrary code as the current user. If the current user is logged on with administrative user rights, an attacker could take complete control of the affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">
+          This vulnerability requires that a user open a specially crafted Excel file with an affected version of Microsoft Excel.
+          In an email attack scenario, an attacker could exploit the vulnerability by sending a specially crafted Excel file to the user and by convincing the user to open the file.
+          In a web-based attack scenario, an attacker would have to host a website that contains a specially crafted Excel file that is used to attempt to exploit this vulnerability. In addition, compromised websites and websites that accept or host user-provided content could contain specially crafted content that could exploit this vulnerability. An attacker would have no way to force users to visit a specially crafted website. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link that takes them to the attacker's site, and then convince them to open the specially crafted Excel file.
+        </vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that this vulnerability had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Microsoft Excel is used, including workstations and terminal servers, are primarily at risk. Servers could be at more risk if administrators allow users to log on to servers and to run programs. However, best practices strongly discourage allowing this.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a website that contains an Excel file that is used to exploit this vulnerability. In addition, compromised websites and websites that accept or host user-provided content or advertisements could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to visit these websites. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link in an email message or Instant Messenger message that takes them to the attacker's website, and then convince them to open the specially crafted Excel file.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">The vulnerability cannot be exploited automatically through email. For an attack to be successful a user must open an attachment that is sent in an email message.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Use Microsoft Office File Block policy to block the opening of Office 2003 and earlier documents from unknown or untrusted sources and locations</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Use the Microsoft Office Isolated Conversion Environment (MOICE) when opening files from unknown or untrusted sources</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Do not open Excel files that you receive from untrusted sources or that you receive unexpectedly from trusted sources</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS12-076</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS12-076</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Anonymous researcher</vuln:Name>
+        <vuln:Organization xml:lang="en"> iDefense VCP</vuln:Organization>
+        <vuln:Description xml:lang="en">for reporting the Excel SST Invalid Length Use After Free Vulnerability (CVE-2012-1887)</vuln:Description>
+        <vuln:URL>http://labs.idefense.com/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="4">
+    <vuln:Title xml:lang="en">Excel Stack Overflow from FEAT record Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="4" xml:lang="en">A remote code execution vulnerability exists in the way that Microsoft Excel handles specially crafted Excel files. An attacker who successfully exploited this vulnerability could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2012-2543</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9262</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9309</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10152</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10182</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10181</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>6918</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10024</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>196</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9307</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4497</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10313</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10314</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10405</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10408</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-9407</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-9408</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-10308</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-10307</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9171-10120</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could run arbitrary code as the current user. If the current user is logged on with administrative user rights, an attacker could take complete control of the affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">
+          This vulnerability requires that a user open a specially crafted Excel file with an affected version of Microsoft Excel.
+          In an email attack scenario, an attacker could exploit the vulnerability by sending a specially crafted Excel file to the user and by convincing the user to open the file.
+          In a web-based attack scenario, an attacker would have to host a website that contains a specially crafted Excel file that is used to attempt to exploit this vulnerability. In addition, compromised websites and websites that accept or host user-provided content could contain specially crafted content that could exploit this vulnerability. An attacker would have no way to force users to visit a specially crafted website. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link that takes them to the attacker's site, and then convince them to open the specially crafted Excel file.
+        </vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that this vulnerability had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Systems where Microsoft Excel is used, including workstations and terminal servers, are primarily at risk. Servers could be at more risk if administrators allow users to log on to servers and to run programs. However, best practices strongly discourage allowing this.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a website that contains an Excel file that is used to exploit this vulnerability. In addition, compromised websites and websites that accept or host user-provided content or advertisements could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to visit these websites. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link in an email message or Instant Messenger message that takes them to the attacker's website, and then convince them to open the specially crafted Excel file.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">The vulnerability cannot be exploited automatically through email. For an attack to be successful a user must open an attachment that is sent in an email message.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Office File Validation to disable the opening of files that fail validation in Excel 2003 and Excel 2007</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Set Office File Validation to disable the edit in Protected View of files that fail validation in Excel 2010</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Use Microsoft Office File Block policy to block the opening of Office 2003 and earlier documents from unknown or untrusted sources and locations</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Do not open Excel files that you receive from untrusted sources or that you receive unexpectedly from trusted sources</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS12-076</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS12-076</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Anonymous researcher</vuln:Name>
+        <vuln:Organization xml:lang="en">HP TippingPoint's Zero Day Initiative</vuln:Organization>
+        <vuln:Description xml:lang="en">for reporting the Stack Overflow from FEAT record Vulnerability (CVE-2012-2543)</vuln:Description>
+        <vuln:URL>http://www.hpenterprisesecurity.com/products/hp-tippingpoint-network-security/</vuln:URL>
+        <vuln:URL>http://www.zerodayinitiative.com/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+</cvrf:cvrfdoc>

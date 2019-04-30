@@ -1,0 +1,56 @@
+{
+    "edges":[],
+    "vertices":[
+        {
+            "MS-AggregateSeverity":" Important",
+            "MS-CurrentReleaseDate":[
+                "1370908800",
+                "1370909220"
+            ],
+            "MS-ExecutiveSummary":[
+                "This security update resolves a privately reported vulnerability in Microsoft Windows. The vulnerability could allow denial of service if an attacker sends specially crafted packets to the server. Firewall best practices and standard default firewall configurations can help protect networks from attacks that originate outside the enterprise perimeter."
+            ],
+            "MS-ExploitStatusDescription":[
+                "No. Microsoft had not received any information to indicate that this vulnerability had been publicly used to attack customers when this security bulletin was originally issued."
+            ],
+            "MS-ID":"MS13-049[2845690]",
+            "MS-ImpactDescription":[
+                "An attacker who successfully exploited this vulnerability could cause the target system to stop responding.",
+                "An attacker could exploit this vulnerability by sending specially crafted packets to the server."
+            ],
+            "MS-InitialReleaseDate":[
+                "1370908800",
+                "1370909220"
+            ],
+            "MS-MitigationDescription":[
+                "Microsoft has not identified any mitigations for this vulnerability."
+            ],
+            "MS-References":[
+                "https://technet.microsoft.com/security/bulletin/MS13-49"
+            ],
+            "MS-RevisionDate":[
+                "1370908800",
+                "1370909220"
+            ],
+            "MS-RevisionDescription":"Bulletin published.",
+            "MS-RevisionNumber":"1.0",
+            "MS-Status":"Final",
+            "MS-TargetSetDescription":[
+                "Workstations and terminal servers are primarily at risk. Servers could be at more risk if administrators allow users to log on to servers and to run programs. However, best practices strongly discourage allowing this."
+            ],
+            "MS-Title":[
+                "TCP/IP Integer Overflow Vulnerability"
+            ],
+            "MS-VendorFixDescription":[
+                "MS13-049"
+            ],
+            "MS-Version":"1.0",
+            "MS-WorkaroundDescription":[
+                "Microsoft has not identified any workarounds for this vulnerability."
+            ],
+            "_id":"CVE-2013-3138",
+            "_type":"vertex",
+            "tagged_text":[]
+        }
+    ]
+}

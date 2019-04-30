@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrf:cvrfdoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cvrf-common="http://www.icasi.org/CVRF/schema/common/1.1" xmlns:prod="http://www.icasi.org/CVRF/schema/prod/1.1" xmlns:vuln="http://www.icasi.org/CVRF/schema/vuln/1.1" xmlns:cvrf="http://www.icasi.org/CVRF/schema/cvrf/1.1" xmlns:wbld="http://schemas.microsoft.com/office/word/2004/5/build" xmlns:scap-core="http://scap.nist.gov/schema/scap-core/1.0" xmlns:cvssv2="http://scap.nist.gov/schema/cvss-v2/1.0" xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2012-04-25T17:42:50" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+  <cvrf:DocumentTitle xml:lang="en">Vulnerabilities in Windows Kernel-Mode Drivers Could Allow Remote Code Execution</cvrf:DocumentTitle>
+  <cvrf:DocumentType xml:lang="en">Security Bulletin</cvrf:DocumentType>
+  <cvrf:DocumentPublisher Type="Vendor" VendorID="">
+    <cvrf:ContactDetails xml:lang="en">secure@microsoft.com and http://www.microsoft.com/msrc</cvrf:ContactDetails>
+    <cvrf:IssuingAuthority xml:lang="en">The Microsoft Security Response Center (MSRC) identifies, monitors, resolves, and responds to security incidents and Microsoft software security vulnerabilities. For more information, see http://www.microsoft.com/security/msrc.</cvrf:IssuingAuthority>
+  </cvrf:DocumentPublisher>
+  <cvrf:DocumentTracking>
+    <cvrf:Identification>
+      <cvrf:ID xml:lang="en">MS12-078</cvrf:ID>
+      <cvrf:Alias xml:lang="en">2783534</cvrf:Alias>
+    </cvrf:Identification>
+    <cvrf:Status>Final</cvrf:Status>
+    <cvrf:Version>1.0</cvrf:Version>
+    <cvrf:RevisionHistory>
+      <cvrf:Revision>
+        <cvrf:Number>1.0</cvrf:Number>
+        <cvrf:Date>2012-12-11T00:00:00-08:00</cvrf:Date>
+        <cvrf:Description xml:lang="en">Bulletin published.</cvrf:Description>
+      </cvrf:Revision>
+    </cvrf:RevisionHistory>
+    <cvrf:InitialReleaseDate>2012-12-11T00:00:00</cvrf:InitialReleaseDate>
+    <cvrf:CurrentReleaseDate>2012-12-11T00:00:00-08:00</cvrf:CurrentReleaseDate>
+  </cvrf:DocumentTracking>
+  <cvrf:DocumentNotes>
+    <cvrf:Note Title="Legal Disclaimer" Audience="Public" Type="Legal Disclaimer" Ordinal="1" xml:lang="en">The information provided in the Microsoft Knowledge Base is provided "as is" without warranty of any kind. Microsoft disclaims all warranties, either express or implied, including the warranties of merchantability and fitness for a particular purpose. In no event shall Microsoft Corporation or its suppliers be liable for any damages whatsoever including direct, indirect, incidental, consequential, loss of business profits or special damages, even if Microsoft Corporation or its suppliers have been advised of the possibility of such damages. Some states do not allow the exclusion or limitation of liability for consequential or incidental damages so the foregoing limitation may not apply.</cvrf:Note>
+    <cvrf:Note Title="Executive Summary" Audience="Public" Type="Summary" Ordinal="2" xml:lang="en">This security update resolves one publicly disclosed vulnerability and one privately reported vulnerability in Windows. The most severe of these vulnerabilities could allow remote code execution if a user opens a specially crafted document or visits a malicious webpage that embeds TrueType or OpenType font files. An attacker would have to convince users to visit the website, typically by getting them to click a link in an email message that takes them to the attacker's website.</cvrf:Note>
+  </cvrf:DocumentNotes>
+  <cvrf:AggregateSeverity Namespace="" xml:lang="en">Critical</cvrf:AggregateSeverity>
+  <prod:ProductTree>
+    <prod:FullProductName ProductID="3700">Microsoft Windows XP Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="3126">Microsoft Windows XP Professional x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="4898">Microsoft Windows Server 2003 Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="5867">Microsoft Windows Server 2003 x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="6236">Microsoft Windows Server 2003 for Itanium-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="4393">Windows Vista Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="9316">Windows Vista x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="9312">Windows Server 2008 for 32-bit Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="9318">Windows Server 2008 for x64-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="9311">Windows Server 2008 for Itanium-Based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="9303">Windows 7 for 32-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10047">Windows 7 for 32-bit Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="9345">Windows 7 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10048">Windows 7 for x64-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="9351">Windows Server 2008 R2 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10051">Windows Server 2008 R2 for x64-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="6257">Windows Server 2008 R2 for Itanium-Based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10050">Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="10373">Windows 8 for 32-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10374">Windows 8 for 64-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10378">Windows Server 2012</prod:FullProductName>
+    <prod:FullProductName ProductID="10377">Windows RT</prod:FullProductName>
+    <prod:FullProductName ProductID="10281">Windows 8 Release Preview for 32-bit systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10282">Windows 8 Release Preview for x64-based systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10283">Windows Server 2012 Release Candidate</prod:FullProductName>
+    <prod:FullProductName ProductID="10284">Windows RT Release Preview</prod:FullProductName>
+    <prod:FullProductName ProductID="10287">Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="9344">Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="9488">Windows Server 2008 R2 for x64-based Systems (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="10049">Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="10379">Windows Server 2012 (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="10306">Windows Server 2012 Release Candidate (Server Core installation)</prod:FullProductName>
+  </prod:ProductTree>
+  <vuln:Vulnerability Ordinal="1">
+    <vuln:Title xml:lang="en">Open Type Font Parsing Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en" Title="Open Type Font Parsing Vulnerability">A remote code execution vulnerability exists in the way that affected components handle a specially crafted OpenType font file. The vulnerability could allow remote code execution if a user opens a specially crafted OpenType font file. An attacker who successfully exploited this vulnerability could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full administrative rights.</vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2012-2556</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10377</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10281</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10282</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10283</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10284</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10287</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9344</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9488</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10049</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10379</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10306</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could run arbitrary code in kernel mode. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">
+          There are multiple means that could allow an attacker to exploit this vulnerability.
+
+          In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit this vulnerability and then convince a user to view the website. An attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by opening an attachment sent through email.
+
+          In a file sharing attack scenario, an attacker could provide a specially crafted document file that is designed to exploit this vulnerability, and then convince a user to open the document file.
+
+          In a local attack scenario, an attacker could also exploit this vulnerability by running a specially crafted application to take complete control over the affected system. However, the attacker must have valid logon credentials and be able to log on locally to exploit this vulnerability in this scenario.
+        </vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that this vulnerability had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Workstations and terminal servers are primarily at risk.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web browsing attack scenario, an attacker could host a website that contains a webpage that is used to exploit this vulnerability. In addition, compromised websites and websites that accept or host user-provided content or advertisements could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to visit these websites. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link in an email message or Instant Messenger message that takes users to the attacker's website.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone, which disables font download by default. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario. The vulnerability could also be exploited if a user opens an attachment that is sent in an email message.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">The malicious file could be sent as an email attachment, but the attacker would have to convince the user to open the attachment in order to exploit the vulnerability.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Disable the WebClient service</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Block TCP ports 139 and 445 at the firewall</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Disable the Preview Pane and Details Pane in Windows Explorer</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS12-078</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS12-078</vuln:URL>
+        </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:References>
+      <vuln:Reference Type="External">
+        <vuln:URL>http://go.microsoft.com/fwlink/?LinkId=21312</vuln:URL>
+        <vuln:Description xml:lang="en">TCP and UDP Port Assignments</vuln:Description>
+      </vuln:Reference>
+    </vuln:References>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="2">
+    <vuln:Title xml:lang="en">TrueType Font Parsing Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="2" xml:lang="en" Title="TrueType Font Parsing Vulnerability">A remote code execution vulnerability exists in the way that affected components handle a specially crafted TrueType font files. The vulnerability could allow remote code execution if a user opens a specially crafted TrueType font file. An attacker who successfully exploited this vulnerability could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full administrative rights.</vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2012-4786</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10377</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10281</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10282</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10283</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10284</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10287</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9344</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9488</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10049</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10379</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10306</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could run arbitrary code in kernel mode. An attacker could then install programs; view, change, or delete data; or create new accounts with full administrative rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">
+          There are multiple means that could allow an attacker to exploit this vulnerability.
+
+          In a web-based attack scenario, an attacker could host a specially crafted website that is designed to exploit this vulnerability and then convince a user to view the website. An attacker would have no way to force users to view the attacker-controlled content. Instead, an attacker would have to convince users to take action, typically by getting them to click a link in an email message or in an Instant Messenger message that takes users to the attacker's website, or by opening an attachment sent through email.
+
+          In a file sharing attack scenario, an attacker could provide a specially crafted document file that is designed to exploit this vulnerability, and then convince a user to open the document file.
+
+          In a local attack scenario, an attacker could also exploit this vulnerability by running a specially crafted application to take complete control over the affected system. However, the attacker must have valid logon credentials and be able to log on locally to exploit this vulnerability in this scenario.
+        </vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that this vulnerability had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Workstations and terminal servers are primarily at risk.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web browsing attack scenario, an attacker could host a website that contains a webpage that is used to exploit this vulnerability. In addition, compromised websites and websites that accept or host user-provided content or advertisements could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to visit these websites. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link in an email message or Instant Messenger message that takes users to the attacker's website.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, all supported versions of Microsoft Outlook, Microsoft Outlook Express, and Windows Mail open HTML email messages in the Restricted sites zone, which disables font download by default. If a user clicks a link in an email message, the user could still be vulnerable to exploitation of this vulnerability through the web-based attack scenario. The vulnerability could also be exploited if a user opens an attachment that is sent in an email message.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">The malicious file could be sent as an email attachment, but the attacker would have to convince the user to open the attachment in order to exploit the vulnerability.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Disable the WebClient service</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Block TCP ports 139 and 445 at the firewall</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Disable the Preview Pane and Details Pane in Windows Explorer</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS12-078</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS12-078</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:References>
+      <vuln:Reference Type="External">
+        <vuln:URL>http://go.microsoft.com/fwlink/?LinkId=21312</vuln:URL>
+        <vuln:Description xml:lang="en">TCP and UDP Port Assignments</vuln:Description>
+      </vuln:Reference>
+    </vuln:References>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Description xml:lang="en">Microsoft thanks Eetu Luodemaa and Joni Vähämäki of Documill, working with the Chromium Security Rewards Program, for reporting the Windows Font Parsing Vulnerability (CVE-2012-2556)</vuln:Description>
+        <vuln:URL>http://www.documill.com/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+</cvrf:cvrfdoc>

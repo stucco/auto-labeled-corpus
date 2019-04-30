@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrf:cvrfdoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cvrf-common="http://www.icasi.org/CVRF/schema/common/1.1" xmlns:prod="http://www.icasi.org/CVRF/schema/prod/1.1" xmlns:vuln="http://www.icasi.org/CVRF/schema/vuln/1.1" xmlns:cvrf="http://www.icasi.org/CVRF/schema/cvrf/1.1" xmlns:wbld="http://schemas.microsoft.com/office/word/2004/5/build" xmlns:scap-core="http://scap.nist.gov/schema/scap-core/1.0" xmlns:cvssv2="http://scap.nist.gov/schema/cvss-v2/1.0" xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2012-04-25T17:42:50" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+  <cvrf:DocumentTitle xml:lang="en">Vulnerability in Open Data Protocol Could Allow Denial of Service</cvrf:DocumentTitle>
+  <cvrf:DocumentType xml:lang="en">Security Bulletin</cvrf:DocumentType>
+  <cvrf:DocumentPublisher Type="Vendor" VendorID="">
+    <cvrf:ContactDetails xml:lang="en">secure@microsoft.com and http://www.microsoft.com/msrc</cvrf:ContactDetails>
+    <cvrf:IssuingAuthority xml:lang="en">The Microsoft Security Response Center (MSRC) identifies, monitors, resolves, and responds to security incidents and Microsoft software security vulnerabilities. For more information, see http://www.microsoft.com/security/msrc.</cvrf:IssuingAuthority>
+  </cvrf:DocumentPublisher>
+  <cvrf:DocumentTracking>
+    <cvrf:Identification>
+      <cvrf:ID xml:lang="en">MS13-007</cvrf:ID>
+      <cvrf:Alias xml:lang="en">2769327</cvrf:Alias>
+    </cvrf:Identification>
+    <cvrf:Status>Final</cvrf:Status>
+    <cvrf:Version>1.0</cvrf:Version>
+    <cvrf:RevisionHistory>
+      <cvrf:Revision>
+        <cvrf:Number>1.0</cvrf:Number>
+        <cvrf:Date>2013-01-08T00:00:00-08:00</cvrf:Date>
+        <cvrf:Description xml:lang="en">Bulletin published.</cvrf:Description>
+      </cvrf:Revision>
+    </cvrf:RevisionHistory>
+    <cvrf:InitialReleaseDate>2013-01-08T00:00:00</cvrf:InitialReleaseDate>
+    <cvrf:CurrentReleaseDate>2013-01-08T00:00:00-08:00</cvrf:CurrentReleaseDate>
+  </cvrf:DocumentTracking>
+  <cvrf:DocumentNotes>
+    <cvrf:Note Title="Legal Disclaimer" Audience="Public" Type="Legal Disclaimer" Ordinal="1" xml:lang="en">The information provided in the Microsoft Knowledge Base is provided "as is" without warranty of any kind. Microsoft disclaims all warranties, either express or implied, including the warranties of merchantability and fitness for a particular purpose. In no event shall Microsoft Corporation or its suppliers be liable for any damages whatsoever including direct, indirect, incidental, consequential, loss of business profits or special damages, even if Microsoft Corporation or its suppliers have been advised of the possibility of such damages. Some states do not allow the exclusion or limitation of liability for consequential or incidental damages so the foregoing limitation may not apply.</cvrf:Note>
+    <cvrf:Note Title="Executive Summary" Audience="Public" Type="Summary" Ordinal="2" xml:lang="en">This security update resolves a privately reported vulnerability in the Open Data (OData) protocol. The vulnerability could allow denial of service if an unauthenticated attacker sends specially crafted HTTP requests to an affected site. Firewall best practices and standard default firewall configurations can help protect networks from attacks that originate outside the enterprise perimeter. Best practices recommend that systems that are connected to the Internet have a minimal number of ports exposed.</cvrf:Note>
+  </cvrf:DocumentNotes>
+  <cvrf:AggregateSeverity Namespace="" xml:lang="en">Important</cvrf:AggregateSeverity>
+  <prod:ProductTree>
+    <prod:FullProductName ProductID="2472-10373">Microsoft .NET Framework 3.5 on Windows 8 for 32-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="2472-10374">Microsoft .NET Framework 3.5 on Windows 8 for 64-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="2472-10378">Microsoft .NET Framework 3.5 on Windows Server 2012</prod:FullProductName>
+    <prod:FullProductName ProductID="2472-10379">Microsoft .NET Framework 3.5 on Windows Server 2012 (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="7683-3700">Microsoft .NET Framework 3.5 Service Pack 1 on Microsoft Windows XP Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="7683-3126">Microsoft .NET Framework 3.5 Service Pack 1 on Microsoft Windows XP Professional x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="7683-4898">Microsoft .NET Framework 3.5 Service Pack 1 on Microsoft Windows Server 2003 Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="7683-6236">Microsoft .NET Framework 3.5 Service Pack 1 on Microsoft Windows Server 2003 for Itanium-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="7683-5867">Microsoft .NET Framework 3.5 Service Pack 1 on Microsoft Windows Server 2003 x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="7683-4393">Microsoft .NET Framework 3.5 Service Pack 1 on Windows Vista Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="7683-9316">Microsoft .NET Framework 3.5 Service Pack 1 on Windows Vista x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="7683-9312">Microsoft .NET Framework 3.5 Service Pack 1 on Windows Server 2008 for 32-bit Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="7683-9318">Microsoft .NET Framework 3.5 Service Pack 1 on Windows Server 2008 for x64-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="7683-9311">Microsoft .NET Framework 3.5 Service Pack 1 on Windows Server 2008 for Itanium-Based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="9495-9303">Microsoft .NET Framework 3.5.1 on Windows 7 for 32-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="9495-10047">Microsoft .NET Framework 3.5.1 on Windows 7 for 32-bit Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="9495-9345">Microsoft .NET Framework 3.5.1 on Windows 7 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="9495-10048">Microsoft .NET Framework 3.5.1 on Windows 7 for x64-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="9495-9351">Microsoft .NET Framework 3.5.1 on Windows Server 2008 R2 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="9495-10051">Microsoft .NET Framework 3.5.1 on Windows Server 2008 R2 for x64-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="9495-6257">Microsoft .NET Framework 3.5.1 on Windows Server 2008 R2 for Itanium-Based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="9495-10050">Microsoft .NET Framework 3.5.1 on Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="9495-9488">Microsoft .NET Framework 3.5.1 on Windows Server 2008 R2 for x64-based Systems (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="9495-10049">Microsoft .NET Framework 3.5.1 on Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-3700">Microsoft .NET Framework 4 on Microsoft Windows XP Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-3126">Microsoft .NET Framework 4 on Microsoft Windows XP Professional x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-4898">Microsoft .NET Framework 4 on Microsoft Windows Server 2003 Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-5867">Microsoft .NET Framework 4 on Microsoft Windows Server 2003 x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-6236">Microsoft .NET Framework 4 on Microsoft Windows Server 2003 for Itanium-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-4393">Microsoft .NET Framework 4 on Windows Vista Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-9316">Microsoft .NET Framework 4 on Windows Vista x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-9312">Microsoft .NET Framework 4 on Windows Server 2008 for 32-bit Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-9318">Microsoft .NET Framework 4 on Windows Server 2008 for x64-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-9311">Microsoft .NET Framework 4 on Windows Server 2008 for Itanium-Based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-9303">Microsoft .NET Framework 4 on Windows 7 for 32-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-10047">Microsoft .NET Framework 4 on Windows 7 for 32-bit Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-9345">Microsoft .NET Framework 4 on Windows 7 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-10048">Microsoft .NET Framework 4 on Windows 7 for x64-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-9351">Microsoft .NET Framework 4 on Windows Server 2008 R2 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-10051">Microsoft .NET Framework 4 on Windows Server 2008 R2 for x64-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-6257">Microsoft .NET Framework 4 on Windows Server 2008 R2 for Itanium-Based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-10050">Microsoft .NET Framework 4 on Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="4937-9349">Microsoft .NET Framework 4 on Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="10378"> Windows Server 2012</prod:FullProductName>
+    <prod:FullProductName ProductID="10379">Windows Server 2012 (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="5257">Microsoft .NET Framework 1.0 Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="3899">Microsoft .NET Framework 1.1 Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="9292">Microsoft .NET Framework 2.0 Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="9195">Microsoft .NET Framework 3.0 Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="10310">Microsoft .NET Framework 4.5</prod:FullProductName>
+    <prod:FullProductName ProductID="10377">Windows RT</prod:FullProductName>
+  </prod:ProductTree>
+  <vuln:Vulnerability Ordinal="1">
+    <vuln:Title xml:lang="en">Replace Denial of Service Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">A denial of service vulnerability exists in the OData specification that could allow denial of service. The vulnerability could cause the server or service to stop responding and restart.</vuln:Note>
+    </vuln:Notes>
+    <vuln:ReleaseDate>2013-01-08T00:00:00-08:00</vuln:ReleaseDate>
+    <vuln:CVE>CVE-2013-0005</vuln:CVE>
+    <vuln:ProductStatuses>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2472-10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2472-10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2472-10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>2472-10379</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>7683-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>7683-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>7683-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>7683-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>7683-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>7683-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>7683-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>7683-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>7683-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>7683-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9495-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9495-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9495-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9495-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9495-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9495-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9495-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9495-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9495-9488</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9495-10049</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4937-9349</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10379</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>5257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>3899</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9292</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9195</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10310</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10377</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could use this vulnerability to cause a denial of service attack and disrupt the availability of sites that use .NET WCF Services.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An unauthenticated attacker could send a small number of specially crafted HTTP requests to an affected site, causing a denial of service condition.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that this vulnerability had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Internet-facing systems with .NET Framework and WCF services installed are primarily at risk from this vulnerability. Windows Server 2012 systems running IIS with the Management OData IIS Extension are also primarily at risk from this vulnerability.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-007</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-007</vuln:URL>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">Firewall best practices and standard default firewall configurations can help protect networks from attacks that originate outside the enterprise perimeter. Best practices recommend that systems that are connected to the Internet have a minimal number of ports exposed.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Block OData Web Application ports at the firewall</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Require Authentication for clients connecting to IIS</vuln:Description>
+      </vuln:Remediation>
+    </vuln:Remediations>
+  </vuln:Vulnerability>
+</cvrf:cvrfdoc>

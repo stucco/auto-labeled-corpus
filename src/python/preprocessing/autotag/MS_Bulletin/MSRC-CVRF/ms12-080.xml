@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrf:cvrfdoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cvrf-common="http://www.icasi.org/CVRF/schema/common/1.1" xmlns:prod="http://www.icasi.org/CVRF/schema/prod/1.1" xmlns:vuln="http://www.icasi.org/CVRF/schema/vuln/1.1" xmlns:cvrf="http://www.icasi.org/CVRF/schema/cvrf/1.1" xmlns:wbld="http://schemas.microsoft.com/office/word/2004/5/build" xmlns:scap-core="http://scap.nist.gov/schema/scap-core/1.0" xmlns:cvssv2="http://scap.nist.gov/schema/cvss-v2/1.0" xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2012-04-25T17:42:50" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+  <cvrf:DocumentTitle xml:lang="en">Vulnerabilities in Microsoft Exchange Server WebReady Document Viewing Could Allow Remote Code Execution</cvrf:DocumentTitle>
+  <cvrf:DocumentType xml:lang="en">Security Bulletin</cvrf:DocumentType>
+  <cvrf:DocumentPublisher Type="Vendor" VendorID="">
+    <cvrf:ContactDetails xml:lang="en">secure@microsoft.com and http://www.microsoft.com/msrc</cvrf:ContactDetails>
+    <cvrf:IssuingAuthority xml:lang="en">The Microsoft Security Response Center (MSRC) identifies, monitors, resolves, and responds to security incidents and Microsoft software security vulnerabilities. For more information, see http://www.microsoft.com/security/msrc.</cvrf:IssuingAuthority>
+  </cvrf:DocumentPublisher>
+  <cvrf:DocumentTracking>
+    <cvrf:Identification>
+      <cvrf:ID xml:lang="en">MS12-080</cvrf:ID>
+      <cvrf:Alias xml:lang="en">2784126</cvrf:Alias>
+    </cvrf:Identification>
+    <cvrf:Status>Final</cvrf:Status>
+    <cvrf:Version>1.0</cvrf:Version>
+    <cvrf:RevisionHistory>
+      <cvrf:Revision>
+        <cvrf:Number>1.0</cvrf:Number>
+        <cvrf:Date>2012-12-11T00:00:00-08:00</cvrf:Date>
+        <cvrf:Description xml:lang="en">Bulletin published.</cvrf:Description>
+      </cvrf:Revision>
+    </cvrf:RevisionHistory>
+    <cvrf:InitialReleaseDate>2012-12-11T00:00:00</cvrf:InitialReleaseDate>
+    <cvrf:CurrentReleaseDate>2012-12-11T00:00:00-08:00</cvrf:CurrentReleaseDate>
+  </cvrf:DocumentTracking>
+  <cvrf:DocumentNotes>
+    <cvrf:Note Title="Legal Disclaimer" Audience="Public" Type="Legal Disclaimer" Ordinal="1" xml:lang="en">The information provided in the Microsoft Knowledge Base is provided "as is" without warranty of any kind. Microsoft disclaims all warranties, either express or implied, including the warranties of merchantability and fitness for a particular purpose. In no event shall Microsoft Corporation or its suppliers be liable for any damages whatsoever including direct, indirect, incidental, consequential, loss of business profits or special damages, even if Microsoft Corporation or its suppliers have been advised of the possibility of such damages. Some states do not allow the exclusion or limitation of liability for consequential or incidental damages so the foregoing limitation may not apply.</cvrf:Note>
+    <cvrf:Note Title="Executive Summary" Audience="Public" Type="Summary" Ordinal="2" xml:lang="en">This security update resolves publicly disclosed vulnerabilities and one privately reported vulnerability in Microsoft Exchange Server. The most severe vulnerabilities are in Microsoft Exchange Server WebReady Document Viewing and could allow remote code execution in the security context of the transcoding service on the Exchange server if a user previews a specially crafted file using Outlook Web App (OWA). The transcoding service in Exchange that is used for WebReady Document Viewing is running in the LocalService account. The LocalService account has minimum privileges on the local computer and presents anonymous credentials on the network.</cvrf:Note>
+  </cvrf:DocumentNotes>
+  <cvrf:AggregateSeverity Namespace="" xml:lang="en">Critical</cvrf:AggregateSeverity>
+  <prod:ProductTree>
+    <prod:FullProductName ProductID="10004">Microsoft Exchange Server 2007 Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="9362">Microsoft Exchange Server 2010 Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="10178">Microsoft Exchange Server 2010 Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="6180">Microsoft Exchange Server 2003 Service Pack 2</prod:FullProductName>
+  </prod:ProductTree>
+  <vuln:Vulnerability Ordinal="1">
+    <vuln:Title xml:lang="en">Oracle Outside In Contains Multiple Exploitable Vulnerabilities</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">
+        Remote code execution vulnerabilities exist in Microsoft Exchange Server through the WebReady Document Viewing feature. These vulnerabilities could allow remote code execution as the LocalService account if a user views a specially crafted file through Outlook Web Access in a browser. An attacker who successfully exploited the vulnerabilities could run code on the affected server, but only as the LocalService account. The LocalService account has minimum privileges on the local computer and presents anonymous credentials on the network.
+
+        To view these vulnerabilities as a standard entry in the Common Vulnerabilities and Exposures list, see CVE-2012-3214 and CVE-2012-3217.
+      </vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2012-3214</vuln:CVE>
+    <vuln:ProductStatuses>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10178</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9362</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10004</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>6180</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited these vulnerabilities could run arbitrary code as LocalService on the affected Exchange server. The LocalService account has minimum privileges on the local computer and presents anonymous credentials on the network.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could send an email message containing a specially crafted file to a user on an affected version of Exchange. When the user previews the specially crafted file in the browser, arbitrary code could be run on the Exchange server. An attacker could then install programs; view, change, or delete data; or take any other action that the server process has access to do.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that these vulnerabilities had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Exchange server systems are primarily at risk from these vulnerabilities.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">The transcoding service in Exchange that is used for WebReady Document Viewing is running in the LocalService account. The LocalService account has minimum privileges on the local computer and presents anonymous credentials on the network.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Disable WebReady document view</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS12-080</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/ms12-080</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="2">
+    <vuln:Title xml:lang="en">RSS Feed May Cause Exchange DoS Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">A denial of service vulnerability exists in Microsoft Exchange Server when Exchange improperly handles RSS feeds. The vulnerability could cause the Information Store service on the affected system to become unresponsive until the process is forcibly terminated. This unresponsive condition could cause Exchange databases to dismount, and potentially lead to corruption of databases, affecting user mailboxes.</vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2012-4791</vuln:CVE>
+    <vuln:ProductStatuses>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10004</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9362</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10178</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>6180</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could cause the Information Store service on the affected system to become unresponsive until the process is forcibly terminated. This unresponsive condition could cause Exchange databases to dismount, and potentially lead to corruption of databases, affecting user mailboxes.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker with a valid email account on the Exchange server could create a specially crafted RSS feed that is designed to exploit this vulnerability and then subscribe to the RSS feed. This vulnerability could be exploited when the affected Exchange server handles the RSS feed. </vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that this vulnerability had been publicly used to attack customers when this security bulletin was originally issued. </vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Exchange server systems are primarily at risk from this vulnerability.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker must have a valid email account on the affected Exchange server and be able to create RSS feeds to exploit this vulnerability.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS12-080</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/ms12-080</vuln:URL>
+      </vuln:Remediation>
+    </vuln:Remediations>
+  </vuln:Vulnerability>
+</cvrf:cvrfdoc>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrf:cvrfdoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cvrf-common="http://www.icasi.org/CVRF/schema/common/1.1" xmlns:prod="http://www.icasi.org/CVRF/schema/prod/1.1" xmlns:vuln="http://www.icasi.org/CVRF/schema/vuln/1.1" xmlns:cvrf="http://www.icasi.org/CVRF/schema/cvrf/1.1" xmlns:wbld="http://schemas.microsoft.com/office/word/2004/5/build" xmlns:scap-core="http://scap.nist.gov/schema/scap-core/1.0" xmlns:cvssv2="http://scap.nist.gov/schema/cvss-v2/1.0" xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2012-04-25T17:42:50" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+  <cvrf:DocumentTitle xml:lang="en">Vulnerabilities in System Center Operations Manager Could Allow Elevation of Privilege</cvrf:DocumentTitle>
+  <cvrf:DocumentType xml:lang="en">Security Bulletin</cvrf:DocumentType>
+  <cvrf:DocumentPublisher Type="Vendor" VendorID="">
+    <cvrf:ContactDetails xml:lang="en">secure@microsoft.com and http://www.microsoft.com/msrc</cvrf:ContactDetails>
+    <cvrf:IssuingAuthority xml:lang="en">The Microsoft Security Response Center (MSRC) identifies, monitors, resolves, and responds to security incidents and Microsoft software security vulnerabilities. For more information, see http://www.microsoft.com/security/msrc.</cvrf:IssuingAuthority>
+  </cvrf:DocumentPublisher>
+  <cvrf:DocumentTracking>
+    <cvrf:Identification>
+      <cvrf:ID xml:lang="en">MS13-003</cvrf:ID>
+      <cvrf:Alias xml:lang="en">2748552</cvrf:Alias>
+    </cvrf:Identification>
+    <cvrf:Status>Final</cvrf:Status>
+    <cvrf:Version>1.0</cvrf:Version>
+    <cvrf:RevisionHistory>
+      <cvrf:Revision>
+        <cvrf:Number>1.0</cvrf:Number>
+        <cvrf:Date>2013-01-08T00:00:00-08:00</cvrf:Date>
+        <cvrf:Description xml:lang="en">Bulletin published</cvrf:Description>
+      </cvrf:Revision>
+    </cvrf:RevisionHistory>
+    <cvrf:InitialReleaseDate>2013-01-08T00:00:00</cvrf:InitialReleaseDate>
+    <cvrf:CurrentReleaseDate>2013-01-08T00:00:00-08:00</cvrf:CurrentReleaseDate>
+  </cvrf:DocumentTracking>
+  <cvrf:DocumentNotes>
+    <cvrf:Note Title="Legal Disclaimer" Audience="Public" Type="Legal Disclaimer" Ordinal="1" xml:lang="en">The information provided in the Microsoft Knowledge Base is provided "as is" without warranty of any kind. Microsoft disclaims all warranties, either express or implied, including the warranties of merchantability and fitness for a particular purpose. In no event shall Microsoft Corporation or its suppliers be liable for any damages whatsoever including direct, indirect, incidental, consequential, loss of business profits or special damages, even if Microsoft Corporation or its suppliers have been advised of the possibility of such damages. Some states do not allow the exclusion or limitation of liability for consequential or incidental damages so the foregoing limitation may not apply.</cvrf:Note>
+    <cvrf:Note Title="Executive Summary" Audience="Public" Type="Summary" Ordinal="2" xml:lang="en">This security update resolves two privately reported vulnerabilities in Microsoft System Center Operations Manager. The vulnerabilities could allow elevation of privilege if a user visits an affected website by way of a specially crafted URL. An attacker would have no way to force users to visit such a website. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link in an email message or Instant Messenger message that takes users to the affected website.</cvrf:Note>
+  </cvrf:DocumentNotes>
+  <cvrf:AggregateSeverity Namespace="" xml:lang="en">Important</cvrf:AggregateSeverity>
+  <prod:ProductTree>
+    <prod:FullProductName ProductID="10355">Microsoft System Center Operations Manager 2007 Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="10356">Microsoft System Center Operations Manager 2007 R2</prod:FullProductName>
+    <prod:FullProductName ProductID="10352">Microsoft System Center 2012 Operations Manager</prod:FullProductName>
+  </prod:ProductTree>
+  <vuln:Vulnerability Ordinal="1">
+    <vuln:Title xml:lang="en">System Center Operations Manager Web Console XSS Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en">A cross-site scripting (XSS) vulnerability exists in System Center Operations Manager that could allow specially crafted script code to run under the guise of the server. This is a non-persistent cross-site scripting vulnerability that could allow an attacker to issue commands to the System Center Operations Manager server in the context of the targeted user.</vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2013-0009</vuln:CVE>
+    <vuln:ProductStatuses>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10355</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10356</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10352</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could inject a client-side script in the user's browser. The script could spoof content, disclose information, or take any action that the user could take on the affected website on behalf of the targeted user.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could exploit this vulnerability by having a user visit an affected website by way of a specially crafted URL. This can be done through any medium that can contain URL web links that are controlled by the attacker, such as a link in an email, a link on a website, or a redirect on a website. In addition, compromised websites and websites that accept or host user-provided content or advertisements could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to visit these websites. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link in an email message or Instant Messenger message that takes users to the affected website by way of a specially crafted URL.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft received information about this vulnerability through coordinated vulnerability disclosure.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">System Center Operations Manager servers with users who are authorized to access System Center Operations Manager web consoles are primarily at risk.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a website that contains a webpage that is used to exploit this vulnerability. In addition, compromised websites and websites that accept or host user-provided content or advertisements could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to visit these websites. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link in an email message or Instant Messenger message that takes users to the attacker's website.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Enable Internet Explorer 8, Internet Explorer 9, and Internet Explorer 10 XSS filter in the Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-003</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-003</vuln:URL>
+        <vuln:ProductID>10355</vuln:ProductID>
+        <vuln:ProductID>10356</vuln:ProductID>
+      </vuln:Remediation>
+    </vuln:Remediations>
+  </vuln:Vulnerability>
+  <vuln:Vulnerability Ordinal="2">
+    <vuln:Title xml:lang="en">System Center Operations Manager Web Console XSS Vulnerability</vuln:Title>
+    <vuln:CVE>CVE-2013-0010</vuln:CVE>
+    <vuln:ProductStatuses>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10355</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10356</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10352</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could inject a client-side script in the user's browser. The script could spoof content, disclose information, or take any action that the user could take on the affected website on behalf of the targeted user.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker could exploit this vulnerability by having a user visit an affected website by way of a specially crafted URL. This can be done through any medium that can contain URL web links that are controlled by the attacker, such as a link in an email, a link on a website, or a redirect on a website. In addition, compromised websites and websites that accept or host user-provided content or advertisements could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to visit these websites. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link in an email message or Instant Messenger message that takes users to the affected website by way of a specially crafted URL.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft received information about this vulnerability through coordinated vulnerability disclosure.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">System Center Operations Manager servers with users who are authorized to access System Center Operations Manager web consoles are primarily at risk.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">In a web-based attack scenario, an attacker could host a website that contains a webpage that is used to exploit this vulnerability. In addition, compromised websites and websites that accept or host user-provided content or advertisements could contain specially crafted content that could exploit this vulnerability. In all cases, however, an attacker would have no way to force users to visit these websites. Instead, an attacker would have to convince users to visit the website, typically by getting them to click a link in an email message or Instant Messenger message that takes users to the attacker's website.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Enable Internet Explorer 8, Internet Explorer 9, and Internet Explorer 10 XSS filter in the Local intranet security zone</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">MS13-003</vuln:Description>
+        <vuln:URL>https://technet.microsoft.com/security/bulletin/MS13-003</vuln:URL>
+        <vuln:ProductID>10355</vuln:ProductID>
+        <vuln:ProductID>10356</vuln:ProductID>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Andy Yang</vuln:Name>
+        <vuln:Organization xml:lang="en">Stratsec</vuln:Organization>
+        <vuln:Description xml:lang="en">for reporting the System Center Operations Manager Web Console XSS Vulnerability (CVE-2013-0010)</vuln:Description>
+        <vuln:URL>www.stratset.net</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+</cvrf:cvrfdoc>

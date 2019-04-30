@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrf:cvrfdoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cvrf-common="http://www.icasi.org/CVRF/schema/common/1.1" xmlns:prod="http://www.icasi.org/CVRF/schema/prod/1.1" xmlns:vuln="http://www.icasi.org/CVRF/schema/vuln/1.1" xmlns:cvrf="http://www.icasi.org/CVRF/schema/cvrf/1.1" xmlns:wbld="http://schemas.microsoft.com/office/word/2004/5/build" xmlns:scap-core="http://scap.nist.gov/schema/scap-core/1.0" xmlns:cvssv2="http://scap.nist.gov/schema/cvss-v2/1.0" xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2012-04-25T17:42:50" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+  <cvrf:DocumentTitle xml:lang="en">Vulnerability in DirectPlay Could Allow Remote Code Execution</cvrf:DocumentTitle>
+  <cvrf:DocumentType xml:lang="en">Security Bulletin</cvrf:DocumentType>
+  <cvrf:DocumentPublisher Type="Vendor" VendorID="">
+    <cvrf:ContactDetails xml:lang="en">secure@microsoft.com and http://www.microsoft.com/msrc</cvrf:ContactDetails>
+    <cvrf:IssuingAuthority xml:lang="en">The Microsoft Security Response Center (MSRC) identifies, monitors, resolves, and responds to security incidents and Microsoft software security vulnerabilities. For more information, see http://www.microsoft.com/security/msrc.</cvrf:IssuingAuthority>
+  </cvrf:DocumentPublisher>
+  <cvrf:DocumentTracking>
+    <cvrf:Identification>
+      <cvrf:ID xml:lang="en">MS12-082</cvrf:ID>
+      <cvrf:Alias xml:lang="en">2770660</cvrf:Alias>
+    </cvrf:Identification>
+    <cvrf:Status>Final</cvrf:Status>
+    <cvrf:Version>1.0</cvrf:Version>
+    <cvrf:RevisionHistory>
+      <cvrf:Revision>
+        <cvrf:Number>1.0</cvrf:Number>
+        <cvrf:Date>2012-12-11T00:00:00-08:00</cvrf:Date>
+        <cvrf:Description xml:lang="en">V1.0 (December 11, 2012): Bulletin published.</cvrf:Description>
+      </cvrf:Revision>
+    </cvrf:RevisionHistory>
+    <cvrf:InitialReleaseDate>2012-12-11T00:00:00</cvrf:InitialReleaseDate>
+    <cvrf:CurrentReleaseDate>2012-12-11T00:00:00-08:00</cvrf:CurrentReleaseDate>
+  </cvrf:DocumentTracking>
+  <cvrf:DocumentNotes>
+    <cvrf:Note Title="Legal Disclaimer" Audience="Public" Type="Legal Disclaimer" Ordinal="1" xml:lang="en">The information provided in the Microsoft Knowledge Base is provided "as is" without warranty of any kind. Microsoft disclaims all warranties, either express or implied, including the warranties of merchantability and fitness for a particular purpose. In no event shall Microsoft Corporation or its suppliers be liable for any damages whatsoever including direct, indirect, incidental, consequential, loss of business profits or special damages, even if Microsoft Corporation or its suppliers have been advised of the possibility of such damages. Some states do not allow the exclusion or limitation of liability for consequential or incidental damages so the foregoing limitation may not apply.</cvrf:Note>
+    <cvrf:Note Title="Executive Summary" Audience="Public" Type="Summary" Ordinal="2" xml:lang="en">This security update resolves one privately reported vulnerability in Windows. The vulnerability could allow Remote Code Execution if a users visits a specially crafted website that is designed to invoke Windows Media Player through Internet Explorer or opens a specially crafted Office document with embedded content. This security update is rated Critical for {AFFECTED SOFTWARE LIST}. For more information, see the subsection, Affected and Non-Affected Software, in this section. The security update addresses the vulnerability by correcting the way that DirectPlay handles specially crafted content. For more information about the vulnerability, see the Frequently Asked Questions (FAQ) subsection for the specific vulnerability entry under the next section, Vulnerability Information. Recommendation.The majority of customers have automatic updating enabled and will not need to take any action because this security update will be downloaded and installed automatically. Customers who have not enabled automatic updating need to check for updates and install this update manually. For information about specific configuration options in automatic updating, see Microsoft Knowledge Base Article 294871. For administrators and enterprise installations, or end users who want to install this security update manually, Microsoft recommends that customers apply the update immediately using update management software, or by checking for updates using the Microsoft Update service. See also the section, Detection and Deployment Tools and Guidance, later in this bulletin. Known Issues. None.</cvrf:Note>
+  </cvrf:DocumentNotes>
+  <cvrf:AggregateSeverity Namespace="" xml:lang="en">Important</cvrf:AggregateSeverity>
+  <prod:ProductTree>
+    <prod:FullProductName ProductID="3700">Microsoft Windows XP Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="9328">Microsoft Windows XP Media Center Edition 2005 Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="9321">Microsoft Windows XP Tablet PC Edition 2005 Service Pack 3</prod:FullProductName>
+    <prod:FullProductName ProductID="3126">Microsoft Windows XP Professional x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1414">Microsoft Windows Server 2003</prod:FullProductName>
+    <prod:FullProductName ProductID="4898">Microsoft Windows Server 2003 Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="9245">Microsoft Windows Server 2003 x64 Edition</prod:FullProductName>
+    <prod:FullProductName ProductID="5867">Microsoft Windows Server 2003 x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="5177">Microsoft Windows Server 2003 for Itanium-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="6236">Microsoft Windows Server 2003 for Itanium-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="1634">Windows Vista Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="4393">Windows Vista Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="8832">Windows Vista x64 Edition Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="9316">Windows Vista x64 Edition Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="9189">Windows Server 2008 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="9318">Windows Server 2008 for x64-based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="73">Windows Server 2008 for 32-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="9312">Windows Server 2008 for 32-bit Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="7741">Windows Server 2008 for Itanium-Based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="9311">Windows Server 2008 for Itanium-Based Systems Service Pack 2</prod:FullProductName>
+    <prod:FullProductName ProductID="9303">Windows 7 for 32-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10047">Windows 7 for 32-bit Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="9345">Windows 7 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10048">Windows 7 for x64-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="9351">Windows Server 2008 R2 for x64-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10051">Windows Server 2008 R2 for x64-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="6257">Windows Server 2008 R2 for Itanium-based Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10050">Windows Server 2008 R2 for Itanium-based Systems Service Pack 1</prod:FullProductName>
+    <prod:FullProductName ProductID="10373">Windows 8 for 32-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10374">Windows 8 for 64-bit Systems</prod:FullProductName>
+    <prod:FullProductName ProductID="10378">Windows Server 2012</prod:FullProductName>
+    <prod:FullProductName ProductID="10377">Windows RT</prod:FullProductName>
+    <prod:FullProductName ProductID="10287">Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="9344">Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="9488">Windows Server 2008 R2 for x64-based Systems (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="10049">Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)</prod:FullProductName>
+    <prod:FullProductName ProductID="10379">Windows Server 2012 (Server Core installation)</prod:FullProductName>
+  </prod:ProductTree>
+  <vuln:Vulnerability Ordinal="1">
+    <vuln:Title xml:lang="en">DirectPlay Heap Overflow Vulnerability</vuln:Title>
+    <vuln:Notes>
+      <vuln:Note Type="Description" Ordinal="1" xml:lang="en" Title="DirectPlay Heap Overflow Vulnerability">A remote code execution vulnerability exists in the way that DirectPlay handles specially crafted content. The vulnerability could allow remote code execution if an attacker convinces a user to view a specially crafted Office document with embedded content. An attacker who successfully exploited this vulnerability could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Note>
+    </vuln:Notes>
+    <vuln:CVE>CVE-2012-1537</vuln:CVE>
+    <vuln:ProductStatuses>
+
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>3700</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9328</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9321</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>3126</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1414</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4898</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9245</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>5867</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>5177</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>6236</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>1634</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>4393</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>8832</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9316</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9189</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9318</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>73</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9312</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>7741</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9311</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9303</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10047</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9345</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10048</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>9351</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10051</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>6257</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10050</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10373</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10374</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Affected">
+        <vuln:ProductID>10378</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10377</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10287</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9344</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>9488</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10049</vuln:ProductID>
+      </vuln:Status>
+      <vuln:Status Type="Known Not Affected">
+        <vuln:ProductID>10379</vuln:ProductID>
+      </vuln:Status>
+    </vuln:ProductStatuses>
+    <vuln:Threats>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">An attacker who successfully exploited this vulnerability could run arbitrary code as the current user. If the current user is logged on with administrative user rights, an attacker could take complete control of the affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Impact">
+        <vuln:Description xml:lang="en">In an email attack scenario, an attacker could exploit the vulnerability by sending a specially crafted Office document with embedded content to the user and convincing the user to open the file.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Exploit Status">
+        <vuln:Description xml:lang="en">No. Microsoft had not received any information to indicate that this vulnerability had been publicly used to attack customers when this security bulletin was originally issued.</vuln:Description>
+      </vuln:Threat>
+      <vuln:Threat Type="Target Set">
+        <vuln:Description xml:lang="en">Workstations and terminal servers are primarily at risk. Servers could be at more risk if users who should not have sufficient administrative permissions are given the ability to log on to servers and to run programs. However, best practices strongly discourage allowing this.</vuln:Description>
+      </vuln:Threat>
+    </vuln:Threats>
+    <vuln:Remediations>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">An attacker who successfully exploits this vulnerability could gain the same user rights as the current user. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">The specially crafted Office document could be sent as an email attachment, but the attacker would have to convince the user to open the attachment in order to exploit the vulnerability.</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Mitigation">
+        <vuln:Description xml:lang="en">By default, the DirectPlay ActiveX control is not included in the default allow-list for ActiveX controls in Internet Explorer. Only customers who have explicitly approved this control by using the ActiveX opt-in feature are at risk from attempts to exploit this vulnerability. However, if a customer has used this ActiveX control in a previous version of Internet Explorer, then this ActiveX control is enabled to work in Internet Explorer, even if the customer has not explicitly approved it using the ActiveX opt-in feature. </vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Use Microsoft Office File Block policy to block the opening of Word 2003 and earlier documents from unknown or untrusted sources and locations</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Use Microsoft Office File Block policy to block the opening of RTF documents from unknown or untrusted sources and locations</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Workaround">
+        <vuln:Description xml:lang="en">Do not open Office files that you receive from untrusted sources or that you receive unexpectedly from trusted sources</vuln:Description>
+      </vuln:Remediation>
+      <vuln:Remediation Type="Vendor Fix">
+        <vuln:Description xml:lang="en">https://technet.microsoft.com/security/bulletin/MS12-082</vuln:Description>
+      </vuln:Remediation>
+    </vuln:Remediations>
+    <vuln:Acknowledgments>
+      <vuln:Acknowledgment>
+        <vuln:Name xml:lang="en">Aniway</vuln:Name>
+        <vuln:Organization xml:lang="en">VeriSign iDefense Labs,</vuln:Organization>
+        <vuln:Description xml:lang="en">Aniway, working with VeriSign iDefense Labs, for reporting the DirectPlay Heap Overflow Vulnerability (CVE-2012-1537)</vuln:Description>
+        <vuln:URL>mailto:Aniway.Anyway@gmail.com</vuln:URL>
+        <vuln:URL>http://labs.idefense.com/</vuln:URL>
+      </vuln:Acknowledgment>
+    </vuln:Acknowledgments>
+  </vuln:Vulnerability>
+</cvrf:cvrfdoc>
