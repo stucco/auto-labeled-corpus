@@ -5,7 +5,7 @@ import json, re, pickle, nltk
 import copy
 import os
 import codecs
-import numpy as np 
+import numpy as np
 
 debug = True
 
@@ -19,7 +19,7 @@ path_train="/nvd_2010-2013.train.graphson" # output path, a "cveid":"tagged sent
 path_out=path+"/nvd_2010-2013_w_tags.graphson" # output path, the same graphson file, for all 4 years w/ a new value "tagged" and the tagged text saved
 path_pickle_corpus_dict=path+"/pickle_corpus_dict"
 
-path_out_sample=path+"/random_sample" # used for validation.  Writes randomly sampled cve entries w/ tags to .txt file.  I then hand-checked these.  
+path_out_sample=path+"/random_sample" # used for validation.  Writes randomly sampled cve entries w/ tags to .txt file.  I then hand-checked these.
 
 path_pickle=path+"/pickle_java_words_tags.p"
 path_pickleD=path+"/pickle_D"
@@ -27,7 +27,7 @@ path_pickleA=path+"/pickle_A.p"
 
 
 # # take .json files into python dict
-File2010=path_nvd_2010	
+File2010=path_nvd_2010
 obj_text = codecs.open(File2010, 'r', encoding='utf-8').read()
 obj2010 = json.loads(obj_text)
 
@@ -50,11 +50,11 @@ obj={2010:obj2010, 2011:obj2011, 2012:obj2012, 2013:obj2013}
 
 def both_tags():
 	"""
-	returns a dictionary, called "obj", with a key for each year.  obj[year] is 
-	the graphson file dictionary.  This adds a new field, "tagged_text" 
+	returns a dictionary, called "obj", with a key for each year.  obj[year] is
+	the graphson file dictionary.  This adds a new field, "tagged_text"
 	Which is a triple, the word, the NVD-tag, and the POS-tag
 	"""
-	File2010=path_nvd_2010	
+	File2010=path_nvd_2010
 	obj_text = codecs.open(File2010, 'r', encoding='utf-8').read()
 	obj2010 = json.loads(obj_text)
 
@@ -72,10 +72,10 @@ def both_tags():
 
 	obj={2010:obj2010, 2011:obj2011, 2012:obj2012, 2013:obj2013}
 
-	for year in xrange(2010,2014):
-		print year
-		for j in xrange(len(obj[year]["vertices"])):
-			print j
+	for year in range(2010,2014):
+		print(year)
+		for j in range(len(obj[year]["vertices"])):
+			print(j)
 			V=obj[year]["vertices"][j]
 			t=V["description"].split(' ')
 			ID=V["_id"]
@@ -86,31 +86,31 @@ def both_tags():
 			for i in range(len(T)):
 				T[i]=(T[i][0], T[i][1], S[i][1])
 			obj[year]["vertices"][j]["tagged_text"]=T
-		print "done with year ", year
-	print "Done"
+		print("done with year ", year)
+	print("Done")
 	return obj
 
 
 def jsonify(obj, outFile):
-	json.dump(obj, codecs.open(outFile, 'w', encoding='utf-8'), separators=(',',':'), indent=4, sort_keys=True)  
+	json.dump(obj, codecs.open(outFile, 'w', encoding='utf-8'), separators=(',',':'), indent=4, sort_keys=True)
 
 #The output of "tagged_corpus_dict" is what I saved as path_train
 def tagged_corpus_dict():
 	"""
 	Takes the dictionary output of both_tags(), and makes a returns a new dictionary named "tagged".
-	Its keys are cveids and it's values are the tagged sequence (list of tripples) for that year.    
-	"""	
+	Its keys are cveids and it's values are the tagged sequence (list of tripples) for that year.
+	"""
 	tagged={}
-	File=path_out=path+"/nvd_2010-2013_w_tags.graphson"	
+	File=path_out=path+"/nvd_2010-2013_w_tags.graphson"
 	obj_text = codecs.open(File, 'r', encoding='utf-8').read()
 	obj = json.loads(obj_text)
-	for year in obj.keys():
-		print year
-		for j in xrange(len(obj[year]["vertices"])):
+	for year in list(obj.keys()):
+		print(year)
+		for j in range(len(obj[year]["vertices"])):
 			V=obj[year]["vertices"][j]
 			ID=V["_id"]
 			tagged[ID]=V["tagged_text"]
-		print "done with ", year
+		print("done with ", year)
 	return tagged
 
 # V=obj[2010]["vertices"][1]
@@ -137,10 +137,10 @@ def sample2(n, path_out_sample):
 	"""
 
 	A=[]
-	File2010=path_nvd_2010	
+	File2010=path_nvd_2010
 	obj_text = codecs.open(File2010, 'r', encoding='utf-8').read()
 	obj2010 = json.loads(obj_text)
-	
+
 	File2011=path_nvd_2011
 	obj_text = codecs.open(File2011, 'r', encoding='utf-8').read()
 	obj2011 = json.loads(obj_text)
@@ -155,23 +155,23 @@ def sample2(n, path_out_sample):
 
 	obj={2010:obj2010, 2011:obj2011, 2012:obj2012, 2013:obj2013}
 
-	for j in xrange(len(obj2010["vertices"])):
+	for j in range(len(obj2010["vertices"])):
 		A.append((2010, j))
-	for j in xrange(len(obj2011["vertices"])):
+	for j in range(len(obj2011["vertices"])):
 		A.append((2011, j))
-	for j in xrange(len(obj2012["vertices"])):
+	for j in range(len(obj2012["vertices"])):
 		A.append((2012, j))
-	for j in xrange(len(obj2013["vertices"])):
+	for j in range(len(obj2013["vertices"])):
 		A.append((2013, j))
 
 	np.random.shuffle(A) # replaces A w/ a jumbled version
-	print A[:n]
+	print(A[:n])
 	out=open(path_out_sample, "w")
 
-	for i in xrange(n):
-		print i
+	for i in range(n):
+		print(i)
 		(year,j)=A[i]
-		
+
 		# tag it
 		V=obj[year]["vertices"][j]
 		t=V["description"].split(' ')
@@ -187,19 +187,19 @@ def sample2(n, path_out_sample):
 			out.write(word+" "+tag+"\n")
 		out.write("\n")
 	out.close()
-	print "DONE!"
+	print("DONE!")
 
 
-A=[(2010, 69),(2012,2947), (2012,3345),(2011,344), (2011,1641)] 
+A=[(2010, 69),(2012,2947), (2012,3345),(2011,344), (2011,1641)]
 
 def recheck(A):
 	"""
 	this function was a debugging step used in writing sample2()
 	"""
-	File2010=path_nvd_2010	
+	File2010=path_nvd_2010
 	obj_text = codecs.open(File2010, 'r', encoding='utf-8').read()
 	obj2010 = json.loads(obj_text)
-	
+
 	File2011=path_nvd_2011
 	obj_text = codecs.open(File2011, 'r', encoding='utf-8').read()
 	obj2011 = json.loads(obj_text)
@@ -213,10 +213,10 @@ def recheck(A):
 	obj2013 = json.loads(obj_text)
 
 	obj={2010:obj2010, 2011:obj2011, 2012:obj2012, 2013:obj2013}
-	for i in xrange(len(A)):
-		print i
+	for i in range(len(A)):
+		print(i)
 		(year,j)=A[i]
-		
+
 		# tag it
 		V=obj[year]["vertices"][j]
 		t=V["description"].split(' ')
@@ -224,20 +224,20 @@ def recheck(A):
 		T=basic_tagger(t,ID)
 		T=secondary_tagger(T)
 
-		print ID+" "+str(j)
+		print(ID+" "+str(j))
 
 		for (word,tag) in T:
 			# s+=" "+word+" "+tag
-			print word+" "+tag
-	print "DONE!"
+			print(word+" "+tag)
+	print("DONE!")
 
 # def write_corpus(path_out):
 # 	"""
 # 	writes the sentences to a file.  One line for each CVE-ID description
-# 	I don't think I ever used this 
+# 	I don't think I ever used this
 # 	"""
 # 	out=open(path_out, "w")
-	
+
 # 	for year in xrange(2010, 2014):
 
 # 		#load the file
@@ -258,25 +258,25 @@ def recheck(A):
 # 		print "done w/ year ", year
 # 	print "DONE!"
 # 	out.close()
-	
+
 # def check(n,N):
 # 	"""
-# 	must have obj as a global variable, it's one of the NVD node .graphson files 
-# 	read into python as a dictionary.  This is a debugging function, which prints 
-# 	tagged output from the specified range. 
+# 	must have obj as a global variable, it's one of the NVD node .graphson files
+# 	read into python as a dictionary.  This is a debugging function, which prints
+# 	tagged output from the specified range.
 # 	"""
 
 # 	if n<0:
 # 		n=0
 # 	if N>len(obj["vertices"]):
 # 		N=len(obj["vertices"])
-	
+
 # 	for V in obj["vertices"][n:N]:
 # 		t=V["description"].split(' ')
 # 		ID=V["_id"]
 
 # 		print "\n ID=",ID
-		
+
 # 		T=basic_tagger(t,ID)
 # 		T=secondary_tagger(T)
 # 		for i,s in enumerate(T):
@@ -305,8 +305,8 @@ def sanitize(t):
 	return t
 
 def surroundings(t,j,n):
-	""" 
-	t is a list, j is an index, n is the number of words 
+	"""
+	t is a list, j is an index, n is the number of words
 	requested before and after t[j]
 	"""
 	a=max(0,j-n)
@@ -319,18 +319,18 @@ def basic_tagger(t, ID):
 	t= V["description"].split(' ') for V in obj["vertices"], it's
 	 a list of words to be tagged.
 	ID=V["_id"]
-	tags come from the cpe vector.  This function gets the cveid, the looks 
+	tags come from the cpe vector.  This function gets the cveid, the looks
 	for any edge (in the nvd nodes/edges .graphson file) to a cpe node.  Takes
-	the cpe vector from there and autotags the text for that cveid.  
+	the cpe vector from there and autotags the text for that cveid.
 	"""
 	year=int(ID.split("-")[1])
 
 
 	t=sanitize(t)
-	tt=range(len(t)) # tt will be the lowercase version of t
-	for j in xrange(len(t)):
+	tt=list(range(len(t))) # tt will be the lowercase version of t
+	for j in range(len(t)):
 		tt[j]=t[j].lower()
-	A=[e for e in obj[year]["edges"] if e["_id"].split("_to_")[0]==ID]	
+	A=[e for e in obj[year]["edges"] if e["_id"].split("_to_")[0]==ID]
 	# A is the list of corresponding cpe nodes
 
 	B=defaultdict(lambda : "O")
@@ -345,17 +345,17 @@ def basic_tagger(t, ID):
 	# regexs=['^[0-9\.]+\-[0-9a-zA-Z\.]$','^[0-9\.]+[.a-zA-z]*$',	'^[0-9\.]+_[a-zA-Z0-9]*$',	'^[0-9\.]+\%[0-9a-zA-Z]*$']
 
 
-	T=range(len(t)) # the output list, a list of tuples of the form 
-					# (word, tag) 
- 
+	T=list(range(len(t))) # the output list, a list of tuples of the form
+					# (word, tag)
+
 	# initialize T as every word has tag "O" the null tag
-	for j in xrange(len(T)):
+	for j in range(len(T)):
 		T[j]=(t[j], "O")
 
 	for e in A:
 		v=e["_id"].split("_to_")[1].split(":")
 		# v is the cpe vector
-		
+
 		if v[1]=="/a":
 			B[3]="application"
 			# B[tuple(v[3].split("_"))]="application"
@@ -366,24 +366,24 @@ def basic_tagger(t, ID):
 			B[3]="os"
 			# B[v[3]]="os"
 
-		u=range(len(v)) # if v[j] is 2 words, they are connected with "_", for example
+		u=list(range(len(v))) # if v[j] is 2 words, they are connected with "_", for example
 						# v[j]="http_server".  u gives the same list as v, with tuples
 						# for entries w/ more than word, eg. u[j]=("http", "server")
-		for  j in xrange(len(v)):
+		for  j in range(len(v)):
 			u[j]=tuple(v[j].split("_"))
-		
+
 		#the loop below tags the sentence
-		for j in xrange(2,len(u)): # u[1]=('cpe',) always, and u[2]=(x,) w/ x="/a", "/h", "/o" 	
+		for j in range(2,len(u)): # u[1]=('cpe',) always, and u[2]=(x,) w/ x="/a", "/h", "/o"
 			n=len(u[j])
 			if n==1:
-				for i in xrange(len(tt)):
+				for i in range(len(tt)):
 					if tt[i]==u[j][0]:
 						T[i]=(t[i], "B:"+B[j])
 			if n>1:
-				for i in xrange(len(tt)-n):
+				for i in range(len(tt)-n):
 					if tuple(tt[i:i+n])==u[j]:
 						T[i]=(t[i], "B:"+B[j])
-						for k in xrange(i+1,i+n):
+						for k in range(i+1,i+n):
 							T[k]=(t[k],"I:"+B[j])
 
 	return T
@@ -394,15 +394,15 @@ def secondary_tagger(T):
 	"""
 	# for version tagging regexs
 	C=[r'^[0-9]+(\.|x)+[0-9a-zA-Z\-\.]{1,}$' ,r'^[0-9.x]{2,}\.+-[0-9a-zA-Z.]+$',r'^[0-9\.x]+\.?[a-zA-Z.]+$',r'^[0-9\.x]+_[a-zA-Z0-9.]+$',r'^[0-9\.x]+\%[0-9a-zA-Z.]+$',r'^[0-9\.x]+-([0-9.]+[a-zA-Z0-9.\-_]*|[a-zA-Z0-9.\-_]*[0-9.]+)$']
-	
+
 	# Lists for cwe relevant term tagging
-	ones=[("MITM"),('(csrf)',), ('(xss)',), ('..',), (u'CSRF',), (u'HTML',), (u'Integer',) ,("sql",) , (u'Race',), (u'Use-after-free',), (u'XSS',), (u'access',), (u'account',), (u'allows',), (u'application',), (u'arbitrary',), ('attack',), (u'attackers',), ('authenticate',), (u'authenticated',), ('authentication',), ('authorization',), (u'blocked',), (u'brute-force',), (u'bypass',), (u'cleartext',), (u'code',), (u'commands',), ('configuration',), (u'crash',), (u'credentials',), ('csrf',), ('ddos',), ('denial',), ('denial of service',), ('distributed denial of service',), ('dos',), (u'execute',), ('exposure',), (u'file.',), (u'files',), ('fingerprinting',), (u'forgery',), (u'gain',), (u'handlers',), (u'hijack',), (u'hook',), (u'hook-handler',), (u'information',), (u'inject',), (u'kernel',), (u'kernel-mode',), (u'local',), (u'malware',), ('man-in-the-middle',), (u'memory',), (u'metacharacters',), (u'obtain',), (u'obtained',), ('overflow',), ('overflows',), (u'overwrite',), (u'password',), ('permissions',), ('plaintext',), (u'privileges',), (u'remote',), (u'requests',), (u'script',), (u'scripting',), (u'sensitive',), (u'service',), ('sign',), (u'signature-based',), ('signedness',), (u'symlink',), ('truncation',), ('underflow',), ('underflows',), (u'user-space',), (u'value',), ('xss',)]
-	twos=[('.', '.'), ("integer","underflow"),("Integer", "underflows"),(u'Race', u'condition'), (u'SQL', u'commands'), ('SQL', 'injection'), (u'Use-after-free', u'vulnerability'), ('access', 'control'), (u'access', u'restrictions'), (u'application', u'crash'), (u'arbitrary', u'SQL'), ('arbitrary', 'certificate'), ('arbitrary', 'code'), (u'arbitrary', u'files'), ('arbitrary', 'password'), ('authentication', 'issues'), ('buffer', 'error'), ('buffer', 'overflow'), (u'bypass', u'authentication'), ('code', 'injection'), ('credentials', 'management'), ('cross', 'site forgery'), ('cross-site', 'forgery'), ('cross-site', 'request'), ('cross-site', 'scripting'), ('cryptographic', 'issues'), ('design', 'error'), ('design', 'errors'), ('dot', 'dot'), ('finger', 'printing'), ('format', 'string'), ('gain', 'privileges'), ('hard', 'links'), ('infinite', 'loop'), ('infinite', 'loops'), ('information', 'disclosure'), ('information', 'leak'), ('inject', 'code'), (u'injection', u'vulnerability'), ('input', 'validation'), ('integer', 'overflow'), ('key', 'disclosure'), ('link', 'following'), (u'local', u'users'), ('memory', 'exhaustion'), ('memory', 'leak'), ('memory', 'leaks'), ('modify', 'query'), ('numeric', 'error'), ('numeric', 'errors'), ('path', 'traversal'), (u'potentially', u'sensitive'), ('race', 'conditions'), ('remote', 'attacker'), (u'remote', u'attackers'), ('replay', 'attack'), ('resource', 'management'), (u'sensitive', u'information'), ('sql', 'injection'), ('symbolic', 'links'), (u'symlink', u'attack'), (u'traversal', u'vulnerability'), ('weak', 'key'), (u'web', u'script')]
-	threes=[(u'Directory', u'traversal', u'vulnerability'), (u'Multiple', u'cross-site', u'request'), (u'SQL', u'injection', u'vulnerabilities'), (u'SQL', u'injection', u'vulnerability'), (u'arbitrary', u'PHP', u'code'), (u'arbitrary', u'SQL', u'commands'), (u'arbitrary', u'web', u'script'), ('buffer', 'boundary', 'error'), ('cross', 'site', 'request'), ('cross', 'site', 'scripting'), ('cross-site', 'request', 'forgery'), (u'denial', u'of', u'service'), (u'execute', u'arbitrary', u'SQL'), ('execute', 'arbitrary', 'code'), (u'execute', u'arbitrary', u'commands'), (u'format', u'string', u'specifiers'), ('format', 'string', 'vulnerability'), ('gain', 'administrative', 'access'), (u'hijack', u'the', u'authentication'), ('inject', 'arbitrary', 'code'), ('modify', 'query', 'logic'), (u'obtain', u'sensitive', u'information'), ('os', 'command', 'injection'), (u'remote', u'authenticated', u'users'), ('resource', 'management', 'error'), ('resource', 'management', 'errors')]
+	ones=[("MITM"),('(csrf)',), ('(xss)',), ('..',), ('CSRF',), ('HTML',), ('Integer',) ,("sql",) , ('Race',), ('Use-after-free',), ('XSS',), ('access',), ('account',), ('allows',), ('application',), ('arbitrary',), ('attack',), ('attackers',), ('authenticate',), ('authenticated',), ('authentication',), ('authorization',), ('blocked',), ('brute-force',), ('bypass',), ('cleartext',), ('code',), ('commands',), ('configuration',), ('crash',), ('credentials',), ('csrf',), ('ddos',), ('denial',), ('denial of service',), ('distributed denial of service',), ('dos',), ('execute',), ('exposure',), ('file.',), ('files',), ('fingerprinting',), ('forgery',), ('gain',), ('handlers',), ('hijack',), ('hook',), ('hook-handler',), ('information',), ('inject',), ('kernel',), ('kernel-mode',), ('local',), ('malware',), ('man-in-the-middle',), ('memory',), ('metacharacters',), ('obtain',), ('obtained',), ('overflow',), ('overflows',), ('overwrite',), ('password',), ('permissions',), ('plaintext',), ('privileges',), ('remote',), ('requests',), ('script',), ('scripting',), ('sensitive',), ('service',), ('sign',), ('signature-based',), ('signedness',), ('symlink',), ('truncation',), ('underflow',), ('underflows',), ('user-space',), ('value',), ('xss',)]
+	twos=[('.', '.'), ("integer","underflow"),("Integer", "underflows"),('Race', 'condition'), ('SQL', 'commands'), ('SQL', 'injection'), ('Use-after-free', 'vulnerability'), ('access', 'control'), ('access', 'restrictions'), ('application', 'crash'), ('arbitrary', 'SQL'), ('arbitrary', 'certificate'), ('arbitrary', 'code'), ('arbitrary', 'files'), ('arbitrary', 'password'), ('authentication', 'issues'), ('buffer', 'error'), ('buffer', 'overflow'), ('bypass', 'authentication'), ('code', 'injection'), ('credentials', 'management'), ('cross', 'site forgery'), ('cross-site', 'forgery'), ('cross-site', 'request'), ('cross-site', 'scripting'), ('cryptographic', 'issues'), ('design', 'error'), ('design', 'errors'), ('dot', 'dot'), ('finger', 'printing'), ('format', 'string'), ('gain', 'privileges'), ('hard', 'links'), ('infinite', 'loop'), ('infinite', 'loops'), ('information', 'disclosure'), ('information', 'leak'), ('inject', 'code'), ('injection', 'vulnerability'), ('input', 'validation'), ('integer', 'overflow'), ('key', 'disclosure'), ('link', 'following'), ('local', 'users'), ('memory', 'exhaustion'), ('memory', 'leak'), ('memory', 'leaks'), ('modify', 'query'), ('numeric', 'error'), ('numeric', 'errors'), ('path', 'traversal'), ('potentially', 'sensitive'), ('race', 'conditions'), ('remote', 'attacker'), ('remote', 'attackers'), ('replay', 'attack'), ('resource', 'management'), ('sensitive', 'information'), ('sql', 'injection'), ('symbolic', 'links'), ('symlink', 'attack'), ('traversal', 'vulnerability'), ('weak', 'key'), ('web', 'script')]
+	threes=[('Directory', 'traversal', 'vulnerability'), ('Multiple', 'cross-site', 'request'), ('SQL', 'injection', 'vulnerabilities'), ('SQL', 'injection', 'vulnerability'), ('arbitrary', 'PHP', 'code'), ('arbitrary', 'SQL', 'commands'), ('arbitrary', 'web', 'script'), ('buffer', 'boundary', 'error'), ('cross', 'site', 'request'), ('cross', 'site', 'scripting'), ('cross-site', 'request', 'forgery'), ('denial', 'of', 'service'), ('execute', 'arbitrary', 'SQL'), ('execute', 'arbitrary', 'code'), ('execute', 'arbitrary', 'commands'), ('format', 'string', 'specifiers'), ('format', 'string', 'vulnerability'), ('gain', 'administrative', 'access'), ('hijack', 'the', 'authentication'), ('inject', 'arbitrary', 'code'), ('modify', 'query', 'logic'), ('obtain', 'sensitive', 'information'), ('os', 'command', 'injection'), ('remote', 'authenticated', 'users'), ('resource', 'management', 'error'), ('resource', 'management', 'errors')]
 
 
-	for j in xrange(len(T)):
-		
+	for j in range(len(T)):
+
 		# version tagging:
 		for regex in C:
 			s,tag=T[j]
@@ -413,7 +413,7 @@ def secondary_tagger(T):
 					if j>1 and re.search("version", T[j-2][1]):
 						T[j-1]=(T[j-1][0],"I:version")
 						T[j]=(T[j][0], "I:version")
-					else: 
+					else:
 						T[j-1]=(T[j-1][0],"B:version")
 						T[j]=(T[j][0], "I:version")
 				if re.search("application", T[j-1][1]):
@@ -427,7 +427,7 @@ def secondary_tagger(T):
 			if re.search("version", T[j][1]) and len(T)>j+2 and re.search(r'^[,]{1}$|^and$',T[j+1][0]) and re.search(r'^[0-9]',T[j+2][0]):
 				T[j+2]=(T[j+2][0],"B:version")
 			if re.search("version", T[j][1]) and len(T)>j+3 and T[j+1][0]=="," and T[j+2][0]=="and" and re.search(r'^[0-9]',T[j+3][0]):
-				T[j+3]=(T[j+3][0],"B:version")		
+				T[j+3]=(T[j+3][0],"B:version")
 
 		# update tagging:
 		if re.search(r'^[A-Z]{1,3}[0-9]$', T[j][0]) and T[j][1]=="O":
@@ -446,7 +446,7 @@ def secondary_tagger(T):
 		if re.search(r"^pre[0-9a-zA-Z._-]+",T[j][0]) and T[j][1]=="O":
 			T[j]=(T[j][0],'B:update')
 		if re.search(r"^release[_\-a-zA-Z0-9]+",T[j][0]) and T[j][1]=="O":
-			T[j]=(T[j][0],'B:update')	
+			T[j]=(T[j][0],'B:update')
 		if re.search(r"^update[_\-a-zA-Z0-9]+",T[j][0]) and T[j][1]=="O":
 			T[j]=(T[j][0],'B:update')
 		if re.search(r"\bbeta\b|\bBeta\b|\balpha\b|\bAlpha\b", T[j][0]):
@@ -455,7 +455,7 @@ def secondary_tagger(T):
 				if tag=="B:version":
 					T[j]=(T[j][0],'B:update')
 
-		# cve_id_tagger 
+		# cve_id_tagger
 		if re.search(r'CVE-[0-9]{4}-[0-9]{4}' , T[j][0]):
 			T[j]=(T[j][0], "B:cve id")
 
@@ -477,7 +477,7 @@ def secondary_tagger(T):
 			if T[j][0].lower()==x[0].lower() and T[j][1]=="O":
 				T[j]=(T[j][0],"B:relevant_term")
 
-		# java terms tagger  
+		# java terms tagger
 		# if T[j][0]=="JavaScript":
 			# T[j]=(T[j][0],"B:programming language")
 		if T[j][0].lower()=="java" and j!=0 and T[j-1][0].lower()=="oracle":
@@ -574,12 +574,12 @@ def secondary_tagger(T):
 					T[j]=(T[j][0],"B:parameter")
 					if j>1 and re.search(r'(^and$|^or$)',T[j-1][0]) and re.search(r'(^[a-zA-Z0-9\_\.]*[a-z0-9]+[A-Z]+|^[a-zA-Z0-9\_\.]*[A-Za-z0-9\.]+\_[a-zA-Z0-9\.]+)'  ,  T[j-2][0]):
 						T[j-2]=(T[j-2][0],"B:parameter")
-		
+
 		# file tagging
 		if re.search(r'\.[a-zA-Z0-9]{1,4}$',T[j][0]):
 			if j>1 and re.search(r"^function",T[j-2][0]) and T[j-1][0]=="in":
-				T[j]=(T[j][0],"B:file")	
-			if len(T)>j+1 and re.search(r'^file$|^files$|^script$|^scripts$',T[j+1][0]):	
+				T[j]=(T[j][0],"B:file")
+			if len(T)>j+1 and re.search(r'^file$|^files$|^script$|^scripts$',T[j+1][0]):
 				T[j]=(T[j][0],"B:file")
 		if re.search(r'[a-zA-Z0-9.\-_]+/[a-zA-Z0-9.\-_]+\.[a-zA-Z0-9]{0,4}$', T[j][0]):
 			T[j]=(T[j][0],"B:file")
@@ -643,19 +643,19 @@ def secondary_tagger(T):
 # def tagged_corpus_dict():
 # 	"""
 # 	returns a dictionary, with a key for each year.  The value
-# 	for a given year is a list of tuples.  The tuple is of the form 
-# 	(j, CVE-ID, Tagged text). j is the number this CVE-ID appears in 
-# 	the graphson file list. 
+# 	for a given year is a list of tuples.  The tuple is of the form
+# 	(j, CVE-ID, Tagged text). j is the number this CVE-ID appears in
+# 	the graphson file list.
 # 	"""
 # 	corpus=defaultdict(list)
-	
+
 # 	for year in xrange(2010, 2014):
 # 		print "started " , year
 # 		#load the file
 # 		inFile=path+"/nvdcve-2.0-"+str(year)+".graphson"
 # 		obj_text = codecs.open(inFile, 'r', encoding='utf-8').read()
 # 		obj = json.loads(obj_text)
-		
+
 # 		for j in xrange(len(obj["vertices"])):
 # 			V=obj["vertices"][j]
 # 			t=V["description"].split(' ')
@@ -663,7 +663,7 @@ def secondary_tagger(T):
 # 			T=basic_tagger(t,ID)
 # 			T=secondary_tagger(T)
 # 			corpus[year].append((j,ID, T))
-# 		print "done w/ year ", year		
+# 		print "done w/ year ", year
 # 	corpus=dict(corpus)
 # 	pickle_file=open(path_pickle_corpus_dict, "wb")
 # 	pickle.dump(corpus_dict , pickle_file)
@@ -681,7 +681,7 @@ def secondary_tagger(T):
 # pickle_file.close()
 
 
- 
+
 # def samples(n, corpus_dict, path_out_sample):
 # 	A=[] # dictionary of tuples giving the index (year, number) of each entry
 # 	L=[] # the list of randomly sampled items to be populated and returned
@@ -689,9 +689,9 @@ def secondary_tagger(T):
 # 	for year in corpus_dict.keys():
 # 		for (a,b,c)in corpus_dict[year]:
 # 			A.append((year, a))
-	
+
 # 	np.random.shuffle(A) # replaces A w/ a jumbled version
-	
+
 # 	# Now write the text to file:
 # 	out=open(path_out_sample, "w")
 # 	for i in xrange(n):
@@ -703,7 +703,7 @@ def secondary_tagger(T):
 
 # 		out.write(str(j)+"|"+ "ID"+ "|"+ s+"\n")
 # 	out.close()
-	
+
 
 
 
@@ -715,19 +715,19 @@ def secondary_tagger(T):
 # 	inFile=path+"/nvdcve-2.0-"+str(year)+".graphson"
 # 	obj_text = codecs.open(inFile, 'r', encoding='utf-8').read()
 # 	obj = json.loads(obj_text)
-	
+
 # 	# populate edge_ids
 # 	for j in xrange(len(obj["edges"])):
-# 		edge_ids=edge_ids.union(set([obj["edges"][j]["_inV"]]))	
+# 		edge_ids=edge_ids.union(set([obj["edges"][j]["_inV"]]))
 # 		# if j%100==0:
 # 		# 	print j
-# 	print "done with edge_ids"		
-	
+# 	print "done with edge_ids"
+
 
 # 	node_ids=set()
-# 	# populate node_ids	
+# 	# populate node_ids
 # 	for j in xrange(len(obj['vertices'])):
 # 		node_ids=node_ids.union( set([obj["vertices"][j]["_id"]]))
-		
+
 # 	# return set difference
-# 	return 	node_ids.difference(edge_ids)	
+# 	return 	node_ids.difference(edge_ids)
