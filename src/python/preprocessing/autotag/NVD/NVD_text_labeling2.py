@@ -9,7 +9,8 @@ import numpy as np
 
 debug = True
 
-path=os.getcwd()+"/nvdcve-2010-2013" #file extension to another folder
+path=os.getcwd()
+#path=os.getcwd()+"/nvdcve-2010-2013" #file extension to another folder
 path_nvd_2010=path+"/nvdcve-2.0-2010.graphson" # each years' NVD node file
 path_nvd_2011=path+"/nvdcve-2.0-2011.graphson"
 path_nvd_2012=path+"/nvdcve-2.0-2012.graphson"
